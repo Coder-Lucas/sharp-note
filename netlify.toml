@@ -1,5 +1,4 @@
 [build]
-    command = "echo 'No build command needed.'"
     base = "/"
     publish = "/"
     functions = "/faas"
@@ -7,7 +6,9 @@
 [dev]
     port = 18888
     targetPort = 28888
+    functionsPort = 38888
     autoLaunch = true
+    https = false
 
 [[redirects]]
     from = "/api/*"

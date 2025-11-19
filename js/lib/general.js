@@ -5,9 +5,9 @@ export default () =>
     console.info("执行通用代码");
     document.querySelectorAll(".current").forEach((value) =>
     {
-        value.addEventListener("click", (evt) =>
+        value.addEventListener("click", (event) =>
         {
-            evt.preventDefault();
+            event.preventDefault();
         });
     });
 }

@@ -1,6 +1,6 @@
 {
     "name": "task-now",
-    "version": "1.0.0-permanently-unversioned",
+    "version": "0.0.0-permanently-unversioned",
     "description": "一个游戏化的事项管理器，可安装PWA，助你无痛养成好习惯！",
     "license": "MIT",
     "main": "/faas/init.js",
