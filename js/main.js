@@ -32,7 +32,7 @@ import runGeneral from "/js/lib/general.js";
     }
     try
     {
-        runGeneral()
+        runGeneral();
     } catch (error)
     {
         console.error("出现未知错误 ", error);

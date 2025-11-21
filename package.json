@@ -13,11 +13,5 @@
     "engines": {
         "node": "^22.0.0"
     },
-    "dependencies": {
-        "better-sqlite3": "^12.0.0"
-    },
-    "optionalDependencies": {
-        "netlify-cli": "^23.0.0"
-    },
     "private": true
 }
