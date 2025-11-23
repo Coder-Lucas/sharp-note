@@ -5,14 +5,15 @@ export default () =>
     console.info("执行index.html代码");
     const startYear = 2025;
     const currentYear = new Date().getFullYear();
-    const copyrightYears = document.querySelectorAll(".year");
+    const copyrightYear = document.querySelector(".year");
     const tb = document.querySelector(".table-body");
-    copyrightYears[0].textContent = startYear.toString();
-    copyrightYears[0].dateTime = startYear.toString();
+
     if (currentYear > startYear)
     {
-        copyrightYears[1].textContent = "-".concat(currentYear.toString());
-        copyrightYears[1].dateTime = currentYear.toString();
+        copyrightYear.textContent = startYear.toString().concat("-", currentYear.toString());
+    } else
+    {
+        copyrightYear.textContent = startYear.toString();
     }
     document.querySelector(".is-add").addEventListener("click", () =>
     {

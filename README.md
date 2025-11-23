@@ -14,21 +14,9 @@
 
 ## 获取源代码
 
-第一步：克隆仓库
-
 ```bash
 # 请确保已安装Git
 git clone https://github.com/Coder-Lucas/task-now.git
-```
-
-第二步：安装依赖（可选）
-
-```bash
-# 请确保已安装npm并且在第一步的仓库根目录执行
-# 可改为npm install --no-optional
-# --no-optional会跳过开发工具的安装
-# 比如Netlify Dev
-npm install
 ```
 
 ---

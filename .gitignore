@@ -141,5 +141,4 @@ vite.config.ts.timestamp-*
 # Local Netlify folder
 .netlify
 .idea
-deno.lock
 node_module
