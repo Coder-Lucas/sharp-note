@@ -6,7 +6,8 @@ export default (event, context) =>
     {
         const contentType = getHeaderIgnoreCase(event.headers, "content-type");
     } catch (error)
-    {}
+    {
+    }
     try
     {
         if (event.httpMethod !== "POST")
@@ -22,7 +23,7 @@ export default (event, context) =>
             });
         }
         return new Response(JSON.stringify({
-            message: "初始化完成",
+            message: "编写中"
         }), {
             status: 200,
             statusText: "OK",
@@ -40,7 +41,7 @@ export default (event, context) =>
             statusText: "Internal Server Error",
             headers: new Headers({
                 "Content-Type": "application/json"
-            }),
+            })
         });
     }
 };

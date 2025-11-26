@@ -58,11 +58,9 @@
             <!-- 小标题 -->
             <h2 class="subtitle">更好的事项管理器</h2>
             <!-- 添加事项 -->
-            <button class="is-add btn" type="button">添加</button>
-            <!-- 删除事项 -->
-            <button class="is-remove btn" type="button">删除</button>
+            <button class="add btn" type="button">添加</button>
             <!-- 清空事项 -->
-            <button class="is-clear btn" type="button">清空</button>
+            <button class="clear btn" type="button">清空</button>
             <!-- 表格 -->
             <div class="table">
                 <!-- 表头 -->
@@ -75,26 +73,11 @@
                 </div>
                 <!-- 表体 -->
                 <div class="table-body">
-                    <div class="cell">测试2</div>
-                    <div class="cell">2025-11-09</div>
-                    <div class="cell">2025-11-10</div>
-                    <div class="cell">睡觉</div>
-                    <div class="cell">已完成</div>
-                    <div class="cell">测试2</div>
-                    <div class="cell">2025-11-13</div>
-                    <div class="cell">2025-11-14</div>
-                    <div class="cell">吃饭</div>
-                    <div class="cell">已完成</div>
-                    <div class="cell">测试3</div>
-                    <div class="cell">2025-11-13</div>
-                    <div class="cell">2025-11-14</div>
-                    <div class="cell">呼吸</div>
-                    <div class="cell">已完成</div>
+                    <div class="cell empty">暂无任务</div>
                 </div>
                 <!-- 表尾 -->
                 <div class="table-footer">
-                    <button class="expand cell btn">展开</button>
-                    <button class="collapse cell btn">收起</button>
+                    <div class="cell quantity"></div>
                 </div>
             </div>
         </main>

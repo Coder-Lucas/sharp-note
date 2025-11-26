@@ -3,7 +3,7 @@
     "version": "0.0.0-permanent-zero-version",
     "description": "一个游戏化的事项管理器，可安装PWA，助你无痛养成好习惯！",
     "license": "MIT",
-    "main": "/faas/init.js",
+    "main": "/faas/save.js",
     "type": "module",
     "homepage": "https://task-now.netlify.app",
     "repository": {

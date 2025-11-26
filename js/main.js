@@ -6,7 +6,7 @@ import runAchvs from "/js/lib/achvs.js";
 import runAbout from "/js/lib/about.js";
 import runGeneral from "/js/lib/general.js";
 
-(() =>
+(async () =>
 {
     try
     {
@@ -14,16 +14,16 @@ import runGeneral from "/js/lib/general.js";
         switch (document.body.className)
         {
             case "index":
-                runIndex();
+                await runIndex();
                 break;
             case "settings":
-                runSettings();
+                await runSettings();
                 break;
             case "achvs":
-                runAchvs();
+                await runAchvs();
                 break;
             case "about":
-                runAbout();
+                await runAbout();
                 break;
         }
     } catch (error)
@@ -32,7 +32,7 @@ import runGeneral from "/js/lib/general.js";
     }
     try
     {
-        runGeneral();
+        await runGeneral();
     } catch (error)
     {
         console.error("出现未知错误 ", error);

@@ -15,7 +15,7 @@ del *, del *::before, del *::after
 
 html
 {
-    overflow: hidden auto;
+    overflow: hidden scroll;
 }
 
 .nav
@@ -23,9 +23,9 @@ html
     background-color: var(--gray-14);
     display: inline-block;
     height: 4rem;
+    position: fixed;
     text-align: center;
     width: 100%;
-    position: fixed;
     z-index: 2147483647;
 }
 
@@ -70,33 +70,33 @@ html
 
 .footer-list
 {
-    display: flex;
-    height: 100%;
-    width: 100%;
     align-items: center;
     background-color: transparent;
+    display: flex;
+    height: 100%;
     justify-content: space-evenly;
+    width: 100%;
 }
 
 .footer-item
 {
-    display: flex;
-    width: auto;
-    height: auto;
-    justify-content: center;
     align-items: center;
     background-color: transparent;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    width: auto;
 }
 
 .footer-copyright, .footer-link
 {
-    display: flex;
     align-items: center;
+    background-color: transparent;
+    color: var(--gray-85);
+    display: flex;
+    height: 100%;
     justify-content: center;
     width: 100%;
-    height: 100%;
-    color: var(--gray-85);
-    background-color: transparent;
 }
 
 .year
@@ -114,11 +114,11 @@ html
 
 .ph
 {
-    width: 100%;
-    height: 4rem;
-    display: inline-block;
-    visibility: hidden;
     background-color: transparent;
+    display: inline-block;
+    height: 4rem;
+    visibility: hidden;
+    width: 100%;
 }
 
 .title
@@ -146,7 +146,7 @@ html
     box-shadow: 16px 16px 16px 16px rgba(0, 0, 0, .5);
     display: grid;
     grid-template-columns: repeat(1, minmax(4rem, 1fr));
-    grid-template-rows: repeat(5, minmax(8rem, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(8rem, 1fr));
     height: auto;
     margin: 64px auto;
     place-items: center;
@@ -156,8 +156,8 @@ html
 .table-header
 {
     display: grid;
+    grid-auto-rows: minmax(8rem, 1fr);
     grid-template-columns: repeat(5, minmax(4rem, 1fr));
-    grid-template-rows: repeat(1, minmax(8rem, 1fr));
     height: 100%;
     place-items: center;
     width: 100%;
@@ -166,9 +166,8 @@ html
 .table-body
 {
     display: grid;
-    grid-row: 2 / span 3;
+    grid-auto-rows: minmax(8rem, 1fr);
     grid-template-columns: repeat(5, minmax(4rem, 1fr));
-    grid-template-rows: repeat(3, minmax(8rem, 1fr));
     height: 100%;
     place-items: center;
     width: 100%;
@@ -177,8 +176,8 @@ html
 .table-footer
 {
     display: grid;
+    grid-auto-rows: minmax(8rem, 1fr);
     grid-template-columns: repeat(1, minmax(4rem, 1fr));
-    grid-template-rows: repeat(1, minmax(8rem, 1fr));
     height: 100%;
     place-items: center;
     width: 100%;
@@ -190,7 +189,6 @@ html
     display: grid;
     height: 100%;
     place-items: center;
-    transition: background-color 500ms ease-in-out 0ms;
     width: 100%;
 }
 
@@ -206,25 +204,12 @@ html
     width: 100%;
 }
 
-.collapse, .expand
-{
-    display: none;
-}
-
 .section
 {
     display: inline-block;
     height: auto;
     margin: 16px auto;
     width: 100%;
-}
-
-.outlink
-{
-    color: var(--hue-210);
-    display: inline-block;
-    height: auto;
-    width: auto;
 }
 
 .text, .tip
@@ -235,20 +220,17 @@ html
     width: 100%;
 }
 
-.btn
-{
-    transition: opacity 500ms ease-in-out 0ms;
-}
-
 .btn:hover
 {
+    color: var(--hue-210);
     cursor: pointer;
-    opacity: 0.5;
+    text-decoration: underline solid;
 }
 
 .current:hover
 {
     cursor: not-allowed;
+    text-decoration: line-through solid;
 }
 
 .cell:hover

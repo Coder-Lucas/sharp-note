@@ -1,17 +1,17 @@
 [build]
-    base = "/"
-    publish = "/"
-    functions = "/faas"
+base = "/"
+publish = "/"
+functions = "/faas"
 
 [dev]
-    port = 18888
-    targetPort = 28888
-    functionsPort = 38888
-    autoLaunch = true
-    https = false
+port = 18888
+targetPort = 28888
+functionsPort = 38888
+autoLaunch = true
+https = false
 
 [[redirects]]
-    from = "/api/*"
-    to = "/.netlify/functions/:splat"
-    status = 308
-    force = true
+from = "/api/*"
+to = "/.netlify/functions/:splat"
+status = 308
+force = true

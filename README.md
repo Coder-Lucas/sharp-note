@@ -8,7 +8,7 @@
 
 - 网站链接：[https://task-now.netlify.app](https://task-now.netlify.app)
 - GitHub仓库：[https://github.com/Coder-Lucas/task-now.git](https://github.com/Coder-Lucas/task-now.git)
-- Netlify仓库：[https://app.netlify.com/sites/f551ca51-232f-41ad-a997-dc37d33ffe04](https://app.netlify.com/sites/f551ca51-232f-41ad-a997-dc37d33ffe04)
+- Netlify仓库：[https://app.netlify.com/projects/task-now/deploys](https://app.netlify.com/projects/task-now/deploys)
 
 ---
 
