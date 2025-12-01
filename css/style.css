@@ -8,14 +8,10 @@
     color: var(--gray-14);
 }
 
-del *, del *::before, del *::after
-{
-    display: none !important;
-}
-
 html
 {
-    overflow: hidden scroll;
+    min-width: 320px;
+    overflow: hidden auto;
 }
 
 .nav
@@ -26,7 +22,7 @@ html
     position: fixed;
     text-align: center;
     width: 100%;
-    z-index: 2147483647;
+    z-index: 8888;
 }
 
 .nav-list
@@ -55,6 +51,7 @@ html
     background-color: transparent;
     color: var(--gray-85);
     display: flex;
+    flex-wrap: wrap;
     height: 100%;
     justify-content: center;
     width: 100%;
@@ -94,6 +91,7 @@ html
     background-color: transparent;
     color: var(--gray-85);
     display: flex;
+    flex-wrap: wrap;
     height: 100%;
     justify-content: center;
     width: 100%;
@@ -149,6 +147,7 @@ html
     grid-template-rows: repeat(auto-fill, minmax(8rem, 1fr));
     height: auto;
     margin: 64px auto;
+    overflow: auto hidden;
     place-items: center;
     width: 80%;
 }
@@ -204,6 +203,18 @@ html
     width: 100%;
 }
 
+.quantity
+{
+    color: var(--gray-57);
+    display: grid;
+    font-size: 1.5rem;
+    grid-column: 1 / span 5;
+    grid-row: -1 / span 1;
+    height: 100%;
+    place-items: center;
+    width: 100%;
+}
+
 .section
 {
     display: inline-block;
@@ -218,6 +229,29 @@ html
     height: auto;
     text-align: center;
     width: 100%;
+}
+
+.modal-add
+{
+    display: none;
+    z-index: 88888888;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 16px 16px 16px 16px rgba(0, 0, 0, .5);
+    width: 50%;
+    height: 50%;
+}
+
+.modal-add[open]
+{
+    display: grid;
+}
+
+.modal-add::backdrop
+{
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .btn:hover

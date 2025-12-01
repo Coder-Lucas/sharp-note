@@ -25,6 +25,9 @@ import runGeneral from "/js/lib/general.js";
             case "about":
                 await runAbout();
                 break;
+            default:
+                console.info("该页面无需执行特定页面代码");
+                break;
         }
     } catch (error)
     {

@@ -1,13 +1,7 @@
 "use strict";
 
-export default (event, context) =>
+export default async (event, context) =>
 {
-    try
-    {
-        const contentType = getHeaderIgnoreCase(event.headers, "content-type");
-    } catch (error)
-    {
-    }
     try
     {
         if (event.httpMethod !== "POST")
