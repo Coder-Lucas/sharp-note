@@ -13,7 +13,7 @@ const getElements = async () =>
 const render = async () =>
 {
 
-}
+};
 
 export default async () =>
 {
@@ -26,7 +26,7 @@ export default async () =>
     }, {
         capture: false,
         once: false,
-        passive: true,
+        passive: true
     });
     elements.clear.addEventListener("click", () =>
     {
@@ -42,6 +42,6 @@ export default async () =>
     }, {
         capture: false,
         once: false,
-        passive: true,
+        passive: true
     });
 }

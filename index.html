@@ -3,123 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="一个游戏化的事项管理器，可安装PWA，助你无痛养成好习惯！" name="description">
+        <meta content="TaskNow是一款开源在线笔记应用，使用Markdown格式，并且极其注重个人隐私，所有数据全部位于本机储存。" name="description">
         <meta content="#000000" name="theme-color">
         <meta content="yes" name="mobile-web-app-capable">
         <meta content="telephone=no" name="format-detection">
-        <meta content="TaskNow" name="apple-mobile-web-app-title">
-        <meta content="black" name="apple-mobile-web-app-status-bar-style">
         <title>TaskNow</title>
-        <link href="https://task-now.netlify.app" rel="canonical">
-        <link href="/css/style.css" rel="stylesheet" type="text/css">
-        <link href="/images/icon-svg.svg" rel="icon" sizes="any" type="image/svg">
-        <link href="/images/icon-64x64.png" rel="icon" sizes="64x64" type="image/png">
-        <link href="/images/icon-72x72.png" rel="icon" sizes="72x72" type="image/png">
-        <link href="/images/icon-96x96.png" rel="icon" sizes="96x96" type="image/png">
-        <link href="/images/icon-128x128.png" rel="icon" sizes="128x128" type="image/png">
-        <link href="/images/icon-144x144.png" rel="icon" sizes="144x144" type="image/png">
-        <link href="/images/icon-152x152.png" rel="icon" sizes="152x152" type="image/png">
-        <link href="/images/icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
-        <link href="/images/icon-256x256.png" rel="icon" sizes="256x256" type="image/png">
-        <link href="/images/icon-384x384.png" rel="icon" sizes="384x384" type="image/png">
-        <link href="/images/icon-512x512.png" rel="icon" sizes="512x512" type="image/png">
-        <link href="/images/icon-1024x1024.png" rel="icon" sizes="1024x1024" type="image/png">
+        <link href="https://task-now.netlify.app/" rel="canonical">
+        <link href="/icon-svg.svg" rel="icon" sizes="any" type="image/svg">
+        <link href="/icon-64x64.png" rel="icon" sizes="64x64" type="image/png">
+        <link href="/icon-72x72.png" rel="icon" sizes="72x72" type="image/png">
+        <link href="/icon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+        <link href="/icon-128x128.png" rel="icon" sizes="128x128" type="image/png">
+        <link href="/icon-144x144.png" rel="icon" sizes="144x144" type="image/png">
+        <link href="/icon-152x152.png" rel="icon" sizes="152x152" type="image/png">
+        <link href="/icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
+        <link href="/icon-256x256.png" rel="icon" sizes="256x256" type="image/png">
+        <link href="/icon-384x384.png" rel="icon" sizes="384x384" type="image/png">
+        <link href="/icon-512x512.png" rel="icon" sizes="512x512" type="image/png">
+        <link href="/icon-1024x1024.png" rel="icon" sizes="1024x1024" type="image/png">
         <link href="/manifest.json" rel="manifest" type="application/manifest">
-        <script src="/js/main.js" type="module"></script>
+        <script src="/src/components/app/app.tsx" type="module"></script>
     </head>
-    <body class="index">
-        <!-- 导航栏 -->
-        <header class="nav">
-            <ul class="nav-list">
-                <!-- 前往index.html -->
-                <li class="nav-item">
-                    <a class="nav-link current btn" href="/index.html">首页</a>
-                </li>
-                <!-- 前往setting.html -->
-                <li class="nav-item">
-                    <a class="nav-link btn" href="/settings.html">设置</a>
-                </li>
-                <!-- 前往achvs.html -->
-                <li class="nav-item">
-                    <a class="nav-link btn" href="/achvs.html">成就</a>
-                </li>
-                <!-- 前往about.html -->
-                <li class="nav-item">
-                    <a class="nav-link btn" href="/about.html">关于</a>
-                </li>
-            </ul>
-        </header>
-        <!-- 主要内容 -->
-        <main class="main">
-            <!-- 占位标签 -->
-            <aside class="ph"></aside>
-            <!-- 大标题 -->
-            <h1 class="title">TaskNow</h1>
-            <!-- 小标题 -->
-            <h2 class="subtitle">更好的事项管理器</h2>
-            <!-- 添加事项 -->
-            <button class="add btn" type="button">添加</button>
-            <!-- 清空事项 -->
-            <button class="clear btn" type="button">清空</button>
-            <!-- 保存配置 -->
-            <button class="save btn" type="button">保存</button>
-            <!-- 加载配置 -->
-            <button class="load btn" type="button">加载</button>
-            <!-- 表格 -->
-            <div class="table">
-                <!-- 表头 -->
-                <div class="table-header">
-                    <div class="cell">名称</div>
-                    <div class="cell">开始时间</div>
-                    <div class="cell">截止时间</div>
-                    <div class="cell">事项</div>
-                    <div class="cell">状态</div>
-                </div>
-                <!-- 表体 -->
-                <div class="table-body">
-                    <div class="cell empty">暂无任务</div>
-                </div>
-                <!-- 表尾 -->
-                <div class="table-footer">
-                    <div class="cell quantity"></div>
-                </div>
-            </div>
-        </main>
-        <!-- 页脚 -->
-        <footer class="footer">
-            <ul class="footer-list">
-                <!-- 版权声明 -->
-                <li class="footer-item">
-                    <span class="footer-copyright">Copyright &copy; 2025 Lucas.</span>
-                </li>
-                <!-- 前往privacy.html -->
-                <li class="footer-item">
-                    <a class="footer-link btn" href="/privacy.html">隐私协议</a>
-                </li>
-                <!-- 前往terms.html -->
-                <li class="footer-item">
-                    <a class="footer-link btn" href="/terms.html">用户协议</a>
-                </li>
-            </ul>
-        </footer>
-        <!-- 模态框 -->
-        <dialog class="modal-add">
-            <form class="modal-add-form" action="#" method="get">
-                <label>
-                    <input autocomplete="off" name="name" pattern="^\S+$" placeholder="请输入任务名称" type="text">
-                </label>
-                <label>
-                    <input autocomplete="off" name="start-time" pattern="^\S+$" placeholder="请输入任务起始日期" type="text">
-                </label>
-                <label>
-                    <input autocomplete="off" name="end-time" pattern="^\S+$" placeholder="请输入任务结束日期" type="text">
-                </label>
-                <label>
-                    <input autocomplete="off" name="matter" pattern="^\S+$" placeholder="请输入任务事项" type="text">
-                </label>
-                <button class="modal-add-ok btn" type="submit">确定</button>
-                <button class="modal-add-cancel btn" type="reset">取消</button>
-            </form>
-        </dialog>
-    </body>
+    <body></body>
 </html>

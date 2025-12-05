@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "declarationDir": "./types",
+        "declaration": true,
+        "emitDeclarationOnly": false,
+        "target": "ES2015",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "checkJs": true,
+        "allowImportingTsExtensions": true,
+        "strict": true,
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ],
+            "#/*": [
+                "./src/components/*"
+            ],
+            "~/*": [
+                "./src/assets/*"
+            ]
+        }
+    }
+}

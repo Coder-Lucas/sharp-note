@@ -19,7 +19,7 @@ export default async () =>
         }, {
             capture: false,
             once: false,
-            passive: true,
+            passive: true
         });
     });
 }
