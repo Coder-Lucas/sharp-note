@@ -14,7 +14,7 @@
         "outDir": "./dist",
         "declarationDir": "./types",
         "declaration": true,
-        "emitDeclarationOnly": false,
+        "emitDeclarationOnly": true,
         "noEmit": false,
         "target": "ES2015",
         "module": "ESNext",
