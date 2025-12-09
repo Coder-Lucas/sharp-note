@@ -1,7 +1,7 @@
 [build]
 base = "/"
 publish = "/dist"
-functions = "/faas"
+functions = "/nul"
 command = "npm run bulid"
 
 [dev]
@@ -11,7 +11,7 @@ functionsPort = 38888
 autoLaunch = true
 
 [[redirects]]
-from = "/api/*"
-to = "/.netlify/functions/:splat"
+from = "/*"
+to = "/index.html"
 status = 308
-force = true
+force = false

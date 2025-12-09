@@ -5,7 +5,7 @@
     "start_url": "/",
     "scope": "/",
     "lang": "zh-cmn-Hans-CN",
-    "description": "一个游戏化的事项管理器，可安装PWA，助你无痛养成好习惯！",
+    "description": "TaskNow是一款开源在线笔记应用，使用Markdown格式，并且极其注重个人隐私，所有数据全部位于本机储存。",
     "display": "standalone",
     "orientation": "any",
     "background_color": "#FFFFFF",

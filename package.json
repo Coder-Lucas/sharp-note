@@ -1,7 +1,7 @@
 {
     "name": "task-now",
     "version": "0.0.1",
-    "description": "一个游戏化的事项管理器，可安装PWA，助你无痛养成好习惯！",
+    "description": "TaskNow是一款开源在线笔记应用，使用Markdown格式，并且极其注重个人隐私，所有数据全部位于本机储存。",
     "license": "MIT",
     "type": "module",
     "private": true,
@@ -18,7 +18,8 @@
     },
     "dependencies": {
         "react": "^19.2.0",
-        "react-dom": "^19.2.0"
+        "react-dom": "^19.2.0",
+        "react-router-dom": "^7.10.1"
     },
     "devDependencies": {
         "@eslint/js": "^9.39.1",

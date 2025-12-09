@@ -1,8 +1,10 @@
-import {defineConfig} from "vite";
+import * as vite from "vite";
 import React from "@vitejs/plugin-react-swc";
 
-export default defineConfig({
-    plugins: [React()],
+export default vite.defineConfig({
+    plugins: [
+        React()
+    ],
     root: "./",
     base: "./",
     build: {
@@ -19,8 +21,17 @@ export default defineConfig({
     resolve: {
         alias: {
             "@": "/src",
-            "#": "/src/components",
-            "~": "/src/assets"
+            "@components": "/src/components",
+            "@assets": "/src/assets",
+            "@types": "/src/types",
+            "#": "/src/components/app",
+            "#header": "/src/components/header",
+            "#footer": "/src/components/footer",
+            "#home": "/src/components/home",
+            "#settings": "/src/components/settings",
+            "#about": "/src/components/about",
+            "#help": "/src/components/help",
+            "~": "/"
         }
     },
     css: {

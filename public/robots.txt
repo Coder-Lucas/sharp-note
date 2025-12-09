@@ -1,6 +1,5 @@
 User-agent: *
 
 Disallow: /*?*
-Disallow: /faas/
-Disallow: /api/
+Disallow: /node_modules/
 Disallow: /.netlify/
