@@ -15,6 +15,7 @@
         "declarationDir": "./types",
         "declaration": true,
         "emitDeclarationOnly": false,
+        "noEmit": false,
         "target": "ES2015",
         "module": "ESNext",
         "moduleResolution": "Node",
