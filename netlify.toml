@@ -2,7 +2,7 @@
 base = "/"
 publish = "/dist"
 functions = "/nul"
-command = "npm run bulid"
+command = "npm run build"
 
 [dev]
 port = 18888
