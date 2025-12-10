@@ -24,6 +24,10 @@
         "checkJs": true,
         "allowImportingTsExtensions": true,
         "strict": true,
+        "lib": [
+            "DOM",
+            "ES2015"
+        ],
         "typeRoots": [
             "./src/types",
             "./node_modules/@types"
