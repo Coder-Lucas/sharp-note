@@ -24,25 +24,10 @@ const App = (): react.JSX.Element => {
     </react.StrictMode>);
 };
 
-const busuanziIdArr = [
-    "busuanzi_site_pv",
-    "busuanzi_site_uv",
-    "busuanzi_today_pv",
-    "busuanzi_today_uv"
-].reverse();
-const busuanziArr = [];
 const root = Object.assign(document.createElement("div"), {
     className: styles.root,
     id: "root"
 });
-for (let id of busuanziIdArr) {
-    busuanziArr.push(Object.assign(document.createElement("div"), {
-        className: styles.busuanzi,
-        id: id
-    }));
-}
 document.body.insertAdjacentElement("afterbegin", root);
-for (let busuanzi of busuanziArr) {
-    document.body.insertAdjacentElement("afterbegin", busuanzi);
-}
 reactDOM.createRoot(root).render(<App></App>);
+
