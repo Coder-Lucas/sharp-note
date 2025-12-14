@@ -1,4 +1,5 @@
 {
+    "$schema": "https://www.schemastore.org/package.json",
     "name": "sharp-note",
     "version": "1.0.0",
     "description": "SharpNote是一款开源在线笔记应用，使用Markdown格式，并且极其注重个人隐私，所有数据全部位于本机储存。",
