@@ -1,5 +1,0 @@
-User-agent: *
-
-Disallow: /*?*
-Disallow: /node_modules/
-Disallow: /.netlify/

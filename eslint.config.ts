@@ -1,29 +1,18 @@
-import * as js from "@eslint/js";
-import * as globals from "globals";
-import * as reactHooks from "eslint-plugin-react-hooks";
-import * as reactRefresh from "eslint-plugin-react-refresh";
-import * as eslint from "typescript-eslint";
-import * as eslintConfig from "eslint/config";
+import {defineConfig, globalIgnores} from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
 
-export default eslintConfig.defineConfig([
-    eslintConfig.globalIgnores(["dist"]),
-    {
-        files: [
-            "**/*.{ts,tsx}"
-        ],
-        ignores: [
-            "/node_modules/**",
-            "/dist/**"
-        ],
-        extends: [
-            js.configs.recommended,
-            eslint.configs.recommended,
-            reactHooks.configs.flat.recommended,
-            reactRefresh.configs.vite,
-        ],
-        languageOptions: {
-            ecmaVersion: 2020,
-            globals: globals.browser,
-        },
-    },
+const eslintConfig = defineConfig([
+    ...nextVitals,
+    ...nextTs,
+    // Override default ignores of eslint-config-next.
+    globalIgnores([
+        // Default ignores of eslint-config-next:
+        ".next/**",
+        "out/**",
+        "build/**",
+        "next-env.d.ts",
+    ]),
 ]);
+
+export default eslintConfig;

@@ -1,16 +1,17 @@
 {
     "include": [
-        "./src/**/*.ts",
-        "./src/**/*.tsx",
-        "./src/**/*.d.ts"
+        "./app/**/*.ts",
+        "./app/**/*.tsx",
+        "./app/**/*.d.ts",
+        ".next/types/**/*.ts",
+        ".next/dev/types/**/*.ts"
     ],
     "exclude": [
-        "./node_modules",
-        "./dist"
+        "./node_modules"
     ],
     "compilerOptions": {
         "baseUrl": "./",
-        "rootDir": "./src",
+        "rootDir": "./app",
         "outDir": "./dist",
         "declarationDir": "./types",
         "declaration": true,
@@ -19,7 +20,7 @@
         "allowImportingTsExtensions": true,
         "target": "ES2015",
         "module": "ESNext",
-        "moduleResolution": "Node",
+        "moduleResolution": "bundler",
         "jsx": "react-jsx",
         "allowJs": true,
         "checkJs": true,
@@ -29,47 +30,33 @@
             "DOM",
             "ES2015"
         ],
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "types": [
+            "next",
+            "react",
+            "node"
+        ],
         "typeRoots": [
-            "./src/types",
             "./node_modules/@types"
         ],
         "paths": {
             "@/*": [
-                "./src/*"
-            ],
-            "@components/*": [
-                "./components/*"
-            ],
-            "@assets/*": [
-                "./src/assets/*"
-            ],
-            "@types/*": [
-                "./src/types/*"
+                "./app/*"
             ],
             "#/*": [
-                "./src/components/app/*"
-            ],
-            "#header/*": [
-                "./src/components/header/*"
-            ],
-            "#footer/*": [
-                "./src/components/footer/*"
-            ],
-            "#home/*": [
-                "./src/components/home/*"
-            ],
-            "#settings/*": [
-                "./src/components/settings/*"
-            ],
-            "#about/*": [
-                "./src/components/about/*"
-            ],
-            "#help/*": [
-                "./src/components/help/*"
+                "./components/*"
             ],
             "~/*": [
                 "./*"
             ]
-        }
+        },
+        "incremental": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true
     }
 }
