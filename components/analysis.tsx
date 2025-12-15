@@ -4,12 +4,12 @@ import * as React from "react";
 
 const Analysis: React.FC = () => {
     return (
-        process.env.ANALYSIS_TOKEN ? <NextScript dangerouslySetInnerHTML={
+        process.env.NEXT_PUBLIC_ANALYSIS_TOKEN ? <NextScript dangerouslySetInnerHTML={
             {
                 __html: `
                     var window._hmt=window._hmt||[];
                     (function(){var hm=document.createElement("script");
-                    hm.src="https://hm.baidu.com/hm.js?${process.env.ANALYSIS_TOKEN}";
+                    hm.src="https://hm.baidu.com/hm.js?${process.env.NEXT_PUBLIC_ANALYSIS_TOKEN}";
                     var s=document.getElementsByTagName("script")[0];
                     s.parentNode.insertBefore(hm,s);
                     })();
