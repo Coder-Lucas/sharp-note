@@ -6,7 +6,7 @@
     "license": "MIT",
     "type": "module",
     "private": true,
-    "homepage": "https://sharpnote.vercel.app/",
+    "homepage": "https://shnt.vercel.app/",
     "repository": {
         "type": "git",
         "url": "https://github.com/Coder-Lucas/sharp-note.git"
