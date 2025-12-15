@@ -1,5 +1,6 @@
 import * as Next from "next";
 import * as React from "react";
+import Analysis from "#/analysis.tsx";
 
 const metadata: Next.Metadata = {
     title: "SharpNote",
@@ -13,7 +14,7 @@ const Layout: React.FC<{ readonly children: React.ReactNode; }> = ({children}) =
                 <header></header>
                 {children}
                 <footer></footer>
-                {process.env.ANALYSIS_TOKEN && <script dangerouslySetInnerHTML={{__html: `var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?${process.env.ANALYSIS_TOKEN}";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();`}}></script>}
+                <Analysis></Analysis>
             </body>
         </html>
     );

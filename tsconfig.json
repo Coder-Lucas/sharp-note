@@ -11,8 +11,8 @@
         "./node_modules"
     ],
     "compilerOptions": {
-        "baseUrl": "./",
-        "rootDir": "./app",
+        "baseUrl": ".",
+        "rootDir": ".",
         "outDir": "./dist",
         "declarationDir": "./types",
         "declaration": true,

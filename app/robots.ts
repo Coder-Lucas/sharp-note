@@ -7,6 +7,7 @@ const robots: () => Next.MetadataRoute.Robots = () => {
             allow: "/",
             disallow: "*?*",
         },
+        sitemap: "https://sharpnote.vercel.app/sitemap.xml",
     };
 };
 
