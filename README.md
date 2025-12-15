@@ -6,7 +6,7 @@ SharpNote是一款开源在线笔记应用，使用Markdown格式，并且极其
 
 ## 立即使用SharpNote
 
-- 网站链接：[https://shnt.vercel.app/](https://shnt.vercel.app/)
+- 网站链接：[https://shnt.netlify.app/](https://shnt.netlify.app/)
 - GitHub仓库：[https://github.com/Coder-Lucas/sharp-note.git](https://github.com/Coder-Lucas/sharp-note.git)
 
 ---

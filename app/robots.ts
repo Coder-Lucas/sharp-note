@@ -5,9 +5,13 @@ const robots: () => Next.MetadataRoute.Robots = () => {
         rules: {
             userAgent: "*",
             allow: "/",
-            disallow: "*?*",
+            disallow: [
+                "*?*",
+                "node_modules",
+                ".netlify"
+            ],
         },
-        sitemap: "https://shnt.vercel.app/sitemap.xml",
+        sitemap: "https://shnt.netlify.app/sitemap.xml",
     };
 };
 

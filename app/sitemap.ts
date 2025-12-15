@@ -3,19 +3,19 @@ import * as Next from "next";
 const sitemap: () => Next.MetadataRoute.Sitemap = () => {
     return [
         {
-            url: "https://shnt.vercel.app/",
+            url: "https://shnt.netlify.app/",
             lastModified: new Date()
         },
         {
-            url: "https://shnt.vercel.app/settings",
+            url: "https://shnt.netlify.app/settings",
             lastModified: new Date()
         },
         {
-            url: "https://shnt.vercel.app/about",
+            url: "https://shnt.netlify.app/about",
             lastModified: new Date()
         },
         {
-            url: "https://shnt.vercel.app/docs",
+            url: "https://shnt.netlify.app/docs",
             lastModified: new Date()
         }
     ];
