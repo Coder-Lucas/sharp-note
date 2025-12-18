@@ -20,7 +20,6 @@
 *.jsx text eol=lf
 *.ts text eol=lf
 *.tsx text eol=lf
-*.ipynb text eol=lf
 
 *.json text eol=lf
 *.xml text eol=lf

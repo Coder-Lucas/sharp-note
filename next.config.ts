@@ -5,14 +5,10 @@ const nextConfig: Next.NextConfig = {
     distDir: ".next",
     output: "standalone",
     reactStrictMode: true,
-    pageExtensions: [
-        "ts",
-        "tsx",
-        "d.ts"
-    ],
+    pageExtensions: ["ts", "tsx", "d.ts"],
     compiler: {
         removeConsole: true,
-    }
+    },
 };
 
 export default nextConfig;

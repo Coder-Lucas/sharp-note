@@ -1,24 +1,26 @@
 import * as Next from "next";
 
-const sitemap: () => Next.MetadataRoute.Sitemap = () => {
+type TSitemap = () => Next.MetadataRoute.Sitemap;
+
+const Sitemap: TSitemap = () => {
     return [
         {
             url: "https://shnt.netlify.app/",
-            lastModified: new Date()
+            lastModified: new Date(),
         },
         {
             url: "https://shnt.netlify.app/settings",
-            lastModified: new Date()
+            lastModified: new Date(),
         },
         {
             url: "https://shnt.netlify.app/about",
-            lastModified: new Date()
+            lastModified: new Date(),
         },
         {
             url: "https://shnt.netlify.app/docs",
-            lastModified: new Date()
-        }
+            lastModified: new Date(),
+        },
     ];
 };
 
-export default sitemap;
+export default Sitemap;

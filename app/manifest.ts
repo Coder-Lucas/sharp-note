@@ -1,6 +1,8 @@
 import * as Next from "next";
 
-const manifest: () => Next.MetadataRoute.Manifest = () => {
+type TManifest = () => Next.MetadataRoute.Manifest;
+
+const Manifest: TManifest = () => {
     return {
         name: "SharpNote",
         short_name: "SharpNote",
@@ -18,10 +20,10 @@ const manifest: () => Next.MetadataRoute.Manifest = () => {
                 src: "/favicon.svg",
                 sizes: "any",
                 type: "image/svg",
-                purpose: "maskable"
-            }
-        ]
+                purpose: "maskable",
+            },
+        ],
     };
 };
 
-export default manifest;
+export default Manifest;
