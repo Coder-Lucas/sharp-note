@@ -1,28 +1,28 @@
-import * as Next from "next";
+import * as next from "next";
 
-type TManifest = () => Next.MetadataRoute.Manifest;
+type TManifest = () => next.MetadataRoute.Manifest;
 
 const Manifest: TManifest = () => {
     return {
-        name: "SharpNote",
-        short_name: "SharpNote",
-        id: "/",
-        start_url: "/",
-        scope: "/",
-        lang: "zh-cmn-Hans-CN",
-        description: "SharpNote是一款开源在线笔记应用，使用Markdown格式，并且极其注重个人隐私，所有数据全部位于本机储存。",
-        display: "standalone",
-        orientation: "any",
         background_color: "#FFFFFF",
-        theme_color: "#000000",
+        description: "SharpNote：你的Markdown专属写作空间。极简设计，操作直观，专注于写作本身。响应迅速，即开即用，捕捉每一个灵感瞬间。隐私安全，本地存储，所有数据全部存储于浏览器。完全开源，永久免费，开启你的写作之旅。",
+        display: "standalone",
         icons: [
             {
-                src: "/favicon.svg",
+                purpose: "any",
                 sizes: "any",
-                type: "image/svg",
-                purpose: "maskable",
-            },
+                src: "/logo.svg",
+                type: "image/svg"
+            }
         ],
+        id: "/U2hhcnBOb3Rl",
+        lang: "zh-cmn-Hans-CN",
+        name: "SharpNote",
+        orientation: "any",
+        scope: "/",
+        short_name: "#Note",
+        start_url: "/",
+        theme_color: "#000000"
     };
 };
 

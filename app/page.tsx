@@ -1,11 +1,47 @@
-import * as React from "react";
+import * as react from "react";
 
-const Home: React.FC = () => {
+const Index: react.FC = () => {
     return (
-        <main>
-            <h1>首页</h1>
-        </main>
+        <>
+            <h1 className="text-2xl">SharpNote</h1>
+            <p className="text-2xl">向下划查看导航栏固定效果和透明效果</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+            <p className="text-2xl">...</p>
+        </>
     );
 };
 
-export default Home;
+export default Index;

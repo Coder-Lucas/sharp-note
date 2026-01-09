@@ -1,11 +1,7 @@
-import * as React from "react";
+import * as react from "react";
 
-const About: React.FC = () => {
-    return (
-        <main>
-            <h1>关于</h1>
-        </main>
-    );
+const About: react.FC = () => {
+    return null;
 };
 
 export default About;

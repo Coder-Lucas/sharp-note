@@ -1,7 +1,7 @@
 import * as react from "react";
 
-const Docs: react.FC = () => {
+const Func: react.FC = () => {
     return null;
 };
 
-export default Docs;
+export default Func;

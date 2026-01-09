@@ -1,7 +1,7 @@
 [build]
 base = "."
-publish = "./.next"
-command = "npm run build"
+publish = ".next"
+command = "pnpm run build"
 
 [[redirects]]
 from = "/*"
@@ -13,7 +13,7 @@ force = false
 for = "/*"
 
 [headers.values]
-Permissions-Policy = "geolocation=(self), camera=(), microphone=(), payment=()"
+Permissions-Policy = "camera=(), geolocation=(), microphone=(), payment=()"
 Referrer-Policy = "strict-origin-when-cross-origin"
 X-Content-Type-Options = "nosniff"
 X-Frame-Options = "DENY"

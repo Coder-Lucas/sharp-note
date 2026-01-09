@@ -1,14 +1,5 @@
-import * as Next from "next";
+import * as next from "next";
 
-const nextConfig: Next.NextConfig = {
-    basePath: "",
-    distDir: ".next",
-    output: "standalone",
-    reactStrictMode: true,
-    pageExtensions: ["ts", "tsx", "d.ts"],
-    compiler: {
-        removeConsole: true,
-    },
-};
+const config: next.NextConfig = {};
 
-export default nextConfig;
+export default config;

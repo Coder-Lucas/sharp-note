@@ -1,10 +1,18 @@
 const config = {
-    printWidth: 8888,
-    tabWidth: 4,
+    arrowParens: "always",
+    bracketSpacing: true,
+    embeddedLanguageFormatting: "off",
     endOfLine: "lf",
-    singleQuote: false,
-    semi: true,
+    htmlWhitespaceSensitivity: "ignore",
+    jsxSingleQuote: false,
+    objectWrap: "preserve",
     plugins: ["prettier-plugin-tailwindcss"],
+    printWidth: 1024,
+    semi: true,
+    singleAttributePerLine: false,
+    singleQuote: false,
+    tabWidth: 4,
+    trailingComma: "none"
 };
 
 export default config;

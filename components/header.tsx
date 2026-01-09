@@ -1,32 +1,35 @@
 "use client";
 
-import * as React from "react";
-import Link from "#/link.tsx";
+import NextImage from "next/image";
+import * as react from "react";
+import NextLink from "next/link";
 
-const Header: React.FC = () => {
+type TItemProps = Readonly<{
+    children?: react.ReactNode;
+    href: string;
+}>;
+
+const Item: react.FC<TItemProps> = ({ children = null, href }) => {
     return (
-        <header className="fixed top-0 left-0 z-1000 flex h-16 w-full items-center justify-center border border-zinc-500 bg-linear-to-br from-indigo-200 to-indigo-400">
-            <ul className="flex h-16 w-full items-center justify-evenly bg-transparent">
-                <li className="flex items-center justify-center bg-transparent">
-                    <Link className="flex flex-wrap items-center justify-center bg-transparent text-zinc-950" href="/">
-                        首页
-                    </Link>
-                </li>
-                <li className="flex items-center justify-center bg-transparent">
-                    <Link className="flex flex-wrap items-center justify-center bg-transparent text-zinc-950" href="/settings">
-                        设置
-                    </Link>
-                </li>
-                <li className="flex items-center justify-center bg-transparent">
-                    <Link className="flex flex-wrap items-center justify-center bg-transparent text-zinc-950" href="/about">
-                        关于
-                    </Link>
-                </li>
-                <li className="flex items-center justify-center bg-transparent">
-                    <Link className="flex flex-wrap items-center justify-center bg-transparent text-zinc-950" href="/docs">
-                        文档
-                    </Link>
-                </li>
+        <li className="flex h-16 w-auto items-center justify-center">
+            <NextLink className="relative flex h-16 w-auto items-center justify-center text-xl before:absolute before:top-full before:right-auto before:bottom-0 before:left-1/2 before:z-20 before:h-0.5 before:w-0 before:-translate-x-1/2 before:bg-linear-to-r before:from-indigo-300 before:via-indigo-500 before:to-indigo-700 before:transition-all before:duration-300 before:ease-in-out hover:before:w-16" href={href} prefetch={true} scroll={true}>
+                {children}
+            </NextLink>
+        </li>
+    );
+};
+
+const Header: react.FC = () => {
+    return (
+        <header className="fixed top-0 right-0 bottom-auto left-0 z-10 flex h-16 w-full items-center justify-center bg-zinc-50/50 backdrop-blur-xs backdrop-saturate-150 dark:bg-zinc-950/50">
+            <ul className="flex h-16 w-full items-center justify-around">
+                <Item href="/">
+                    <NextImage alt="logo" height={48} loading="eager" src="/logo.svg" width={48}></NextImage>
+                </Item>
+                <Item href="/func">功能</Item>
+                <Item href="/settings">设置</Item>
+                <Item href="/about">关于</Item>
+                <Item href="/docs">文档</Item>
             </ul>
         </header>
     );

@@ -1,16 +1,12 @@
-import * as Next from "next";
+import * as next from "next";
 
-type TRobots = () => Next.MetadataRoute.Robots;
-
-const Robots: TRobots = () => {
-    return {
-        rules: {
-            userAgent: "*",
-            allow: "/",
-            disallow: ["*?*", "node_modules", ".netlify"],
-        },
-        sitemap: "https://shnt.netlify.app/sitemap.xml",
-    };
+const Robots: next.MetadataRoute.Robots = {
+    rules: {
+        allow: "/",
+        disallow: ["*#*", "*?*"],
+        userAgent: "*"
+    },
+    sitemap: "https://shnt.netlify.app/sitemap.xml"
 };
 
 export default Robots;

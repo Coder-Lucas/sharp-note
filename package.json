@@ -1,40 +1,47 @@
 {
     "$schema": "https://www.schemastore.org/package.json",
-    "name": "sharp-note",
-    "version": "1.0.0",
-    "description": "SharpNote是一款开源在线笔记应用，使用Markdown格式，并且极其注重个人隐私，所有数据全部位于本机储存。",
-    "license": "MIT",
-    "type": "module",
-    "private": true,
+    "dependencies": {
+        "dexie": "4.x.x",
+        "dexie-react-hooks": "4.x.x",
+        "next": "16.x.x",
+        "react": "19.x.x",
+        "react-dom": "19.x.x"
+    },
+    "description": "SharpNote：你的Markdown专属写作空间。极简设计，操作直观，专注于写作本身。响应迅速，即开即用，捕捉每一个灵感瞬间。隐私安全，本地存储，所有数据全部存储于浏览器。完全开源，永久免费，开启你的写作之旅。",
+    "devDependencies": {
+        "@tailwindcss/postcss": "4.x.x",
+        "@types/node": "22.x.x",
+        "@types/react": "19.x.x",
+        "@types/react-dom": "19.x.x",
+        "autoprefixer": "10.x.x",
+        "babel-plugin-react-compiler": "1.x.x",
+        "eslint": "9.x.x",
+        "eslint-config-next": "16.x.x",
+        "postcss": "8.x.x",
+        "prettier": "3.x.x",
+        "prettier-plugin-tailwindcss": "0.x.x",
+        "tailwindcss": "4.x.x",
+        "typescript": "5.x.x"
+    },
+    "engines": {
+        "node": "22.x.x",
+        "npm": "10.x.x",
+        "pnpm": "8.x.x"
+    },
     "homepage": "https://shnt.netlify.app/",
+    "license": "MIT",
+    "name": "sharp-note",
+    "packageManager": "pnpm@8.15.9",
+    "private": true,
     "repository": {
         "type": "git",
         "url": "https://github.com/Coder-Lucas/sharp-note.git"
     },
     "scripts": {
-        "dev": "next dev -p 8888 -H 127.0.0.1",
         "build": "next build",
-        "start": "next start",
-        "lint": "eslint"
+        "dev": "next dev",
+        "start": "next start"
     },
-    "dependencies": {
-        "next": "16.0.10",
-        "react": "19.2.1",
-        "react-dom": "19.2.1"
-    },
-    "devDependencies": {
-        "@tailwindcss/postcss": "^4.1.18",
-        "@types/node": "^20",
-        "@types/react": "^19",
-        "@types/react-dom": "^19",
-        "autoprefixer": "10.4.23",
-        "babel-plugin-react-compiler": "1.0.0",
-        "eslint": "^9",
-        "eslint-config-next": "16.0.10",
-        "postcss": "^8.5.6",
-        "prettier": "3.7.4",
-        "prettier-plugin-tailwindcss": "0.7.2",
-        "tailwindcss": "^4",
-        "typescript": "^5"
-    }
+    "type": "module",
+    "version": "0.0.0-config"
 }

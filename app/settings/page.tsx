@@ -1,11 +1,7 @@
-import * as React from "react";
+import * as react from "react";
 
-const Settings: React.FC = () => {
-    return (
-        <main>
-            <h1>设置</h1>
-        </main>
-    );
+const Settings: react.FC = () => {
+    return null;
 };
 
 export default Settings;
