@@ -1,0 +1,32 @@
+[build]
+base = "."
+command = "pnpm run build"
+publish = ".next"
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+Permissions-Policy = "camera=(), geolocation=(), microphone=(), payment=()"
+Referrer-Policy = "strict-origin-when-cross-origin"
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+
+[[plugins]]
+package = "@netlify/plugin-lighthouse"
+
+[plugins.inputs.audits]
+path = "."
+
+[plugins.inputs.audits.thresholds]
+performance = 0.8
+
+[plugins.inputs.settings]
+locale = "zh"
+preset = "desktop"
+
+[[redirects]]
+force = false
+from = "/*"
+status = 200
+to = "/index.html"

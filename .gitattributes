@@ -1,0 +1,54 @@
+* text=auto
+
+*.htm text eol=lf
+*.html text eol=lf
+*.xhtml text eol=lf
+
+*.css text eol=lf
+*.sass text eol=lf
+*.scss text eol=lf
+*.less text eol=lf
+*.styl text eol=lf
+
+*.js text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.mts text eol=lf
+*.cts text eol=lf
+*.tsx text eol=lf
+*.mdx text eol=lf
+*.ejs text eol=lf
+
+*.json text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.cof text eol=lf
+*.conf text eol=lf
+*.cfg text eol=lf
+*.csv text eol=lf
+*.ini text eol=lf
+*.svg text eol=lf
+*.http text eol=lf
+
+*.txt text eol=lf
+*.log text eol=lf
+*.md text eol=lf
+*.markdown text eol=lf
+
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.gitkeep text eol=lf
+
+*.jpg binary
+*.jpeg binary
+*.tif binary
+*.tiff binary
+*.png binary
+*.webp binary
+*.gif binary
+*.bmp binary
+*.ico binary
