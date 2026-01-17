@@ -1,0 +1,61 @@
+{
+    "$schema": "https://www.schemastore.org/tsconfig.json",
+    "compilerOptions": {
+        "allowImportingTsExtensions": true,
+        "allowJs": true,
+        "baseUrl": ".",
+        "checkJs": true,
+        "declaration": true,
+        "declarationDir": "types",
+        "emitDeclarationOnly": true,
+        "esModuleInterop": true,
+        "incremental": true,
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "lib": [
+            "DOM",
+            "ES2015"
+        ],
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "noEmit": false,
+        "outDir": "dist",
+        "paths": {
+            "#/*": [
+                "components/*"
+            ],
+            "@/*": [
+                "app/*"
+            ],
+            "~/*": [
+                "lib/*"
+            ]
+        },
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "resolveJsonModule": true,
+        "rootDir": ".",
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "ES2015",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "types": [
+            "node",
+            "react"
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        ".next/dev/types/**/*.ts",
+        ".next/types/**/*.ts",
+        "app/**/*.ts",
+        "app/**/*.tsx"
+    ]
+}
