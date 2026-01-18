@@ -3,12 +3,12 @@
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-blue?logo=github&style=flat-square)](https://github.com/Coder-Lucas/sharp-note.git)
 [![Netlify Website](https://img.shields.io/badge/Netlify-Website-blue?logo=netlify&style=flat-square)](https://shnt.netlify.app/)
 
-## 简体中文
+## 中文
 
 ### 项目目录
 
 1. [SharpNote](#sharpnote)
-    1. [简体中文](#简体中文)
+    1. [中文](#中文)
         1. [目录](#项目目录)
         2. [项目描述](#项目描述)
         3. [立即开始](#立即开始)
@@ -17,7 +17,7 @@
             2. [安装依赖](#安装依赖)
         5. [许可证](#许可证)
         6. [联系我们](#联系我们)
-    2. [American English](#american-english)
+    2. [English](#english)
         1. [Table of Contents](#table-of-contents)
         2. [Project Description](#project-description)
         3. [Get Started](#get-started)
@@ -37,7 +37,8 @@
 
 ### 立即开始
 
-**无需下载**，**无需注册**，[访问官网](https://shnt.netlify.app/)，立即开始使用SharpNote！
+**无需下载**，**无需注册**。
+[访问官网](https://shnt.netlify.app/)，立即开始使用SharpNote！
 
 ### 本地部署
 
@@ -45,9 +46,11 @@
 
 ```bash
 # 推荐使用nvm管理Node.js版本
-nvm install
+nvm i
 nvm use newest
-npm install -g pnpm@8.15.9
+npm i -g pnpm@8.15.9
+# 推荐使用AI编程工具：OpenCode
+npm i -g opencode-ai
 ```
 
 #### 安装依赖
@@ -55,7 +58,7 @@ npm install -g pnpm@8.15.9
 ```bash
 git clone https://github.com/Coder-Lucas/sharp-note.git
 cd sharp-note
-pnpm install
+pnpm i
 # 启动开发服务器
 pnpm run dev
 ```
@@ -63,19 +66,19 @@ pnpm run dev
 ### 许可证
 
 > 本应用遵循
-> [The MIT License (MIT)](license.md)
+> [The MIT License (MIT)](LICENSE.md)
 
 ### 联系我们
 
 > [发送邮件](mailto://&#x73;&#x68;&#x61;&#x72;&#x70;&#x6e;&#x6f;&#x74;&#x65;&#x2e;&#x79;&#x65;&#x6e;&#x38;&#x30;&#x32;&#x40;&#x61;&#x6c;&#x65;&#x65;&#x61;&#x73;&#x2e;&#x63;&#x6f;&#x6d;)
 > 以联系我们
 
-## American English
+## English
 
 ### Table of Contents
 
 1. [SharpNote](#sharpnote)
-    1. [简体中文](#简体中文)
+    1. [中文](#中文)
         1. [目录](#项目目录)
         2. [项目描述](#项目描述)
         3. [立即开始](#立即开始)
@@ -84,7 +87,7 @@ pnpm run dev
             2. [安装依赖](#安装依赖)
         5. [许可证](#许可证)
         6. [联系我们](#联系我们)
-    2. [American English](#american-english)
+    2. [English](#english)
         1. [Table of Contents](#table-of-contents)
         2. [Project Description](#project-description)
         3. [Get Started](#get-started)
@@ -96,7 +99,16 @@ pnpm run dev
 
 ### Project Description
 
+**SharpNote**: your dedicated Markdown writing workspace.
+Minimalist design, intuitive operation, **keep your focus solely on writing itself**.
+Blazing-fast response, instant accessibility, **never miss a spark of inspiration**.
+Private & safe, local-first storage, **all data stored locally in your browser**.
+100% open-source, permanently free, **start your writing journey now**.
+
 ### Get Started
+
+**NO DOWNLOAD**, **NO SIGN-UP**.
+**Visit the official website** and start using SharpNote now!
 
 ### Local Deploy
 
@@ -104,9 +116,11 @@ pnpm run dev
 
 ```bash
 # We recommend using nvm to manage Node.js versions
-nvm install
+nvm i
 nvm use newest
-npm install -g pnpm@8.15.9
+npm i -g pnpm@8.15.9
+# We recommend the AI programming tool: OpenCode
+npm i -g opencode-ai
 ```
 
 #### Install Dependencies
@@ -114,7 +128,7 @@ npm install -g pnpm@8.15.9
 ```bash
 git clone https://github.com/Coder-Lucas/sharp-note.git
 cd sharp-note
-pnpm install
+pnpm i
 # Launch the dev server
 pnpm run dev
 ```
@@ -122,7 +136,7 @@ pnpm run dev
 ### License
 
 > This app is licensed under
-> [The MIT License (MIT)](license.md)
+> [The MIT License (MIT)](LICENSE.md)
 
 ### Contact Us
 
