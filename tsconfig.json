@@ -3,33 +3,24 @@
     "compilerOptions": {
         "allowImportingTsExtensions": true,
         "allowJs": true,
-        "baseUrl": ".",
+        "baseUrl": "src",
         "checkJs": true,
-        "declaration": true,
-        "declarationDir": "types",
-        "emitDeclarationOnly": true,
         "esModuleInterop": true,
         "incremental": true,
         "isolatedModules": true,
         "jsx": "react-jsx",
-        "lib": [
-            "DOM",
-            "ES2015"
-        ],
+        "lib": ["DOM", "ES2015"],
         "module": "ESNext",
         "moduleResolution": "bundler",
-        "noEmit": false,
+        "noEmit": true,
         "outDir": "dist",
         "paths": {
-            "#/*": [
-                "components/*"
-            ],
-            "@/*": [
-                "app/*"
-            ],
-            "~/*": [
-                "lib/*"
-            ]
+            "#/*": ["components/*"],
+            "@/*": ["app/*"],
+            "@hooks/*": ["hooks/*"],
+            "@lib/*": ["lib/*"],
+            "@styles/*": ["styles/*"],
+            "~/*": ["./*"]
         },
         "plugins": [
             {
@@ -41,21 +32,9 @@
         "skipLibCheck": true,
         "strict": true,
         "target": "ES2015",
-        "typeRoots": [
-            "node_modules/@types"
-        ],
-        "types": [
-            "node",
-            "react"
-        ]
+        "typeRoots": ["node_modules/@types"],
+        "types": ["node", "react"]
     },
-    "exclude": [
-        "node_modules"
-    ],
-    "include": [
-        ".next/dev/types/**/*.ts",
-        ".next/types/**/*.ts",
-        "app/**/*.ts",
-        "app/**/*.tsx"
-    ]
+    "exclude": ["node_modules"],
+    "include": [".next/dev/types/**/*.ts", ".next/types/**/*.ts", "app/**/*.ts", "app/**/*.tsx"]
 }

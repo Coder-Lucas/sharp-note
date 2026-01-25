@@ -1,6 +1,6 @@
-import * as react from "react";
+import { FC } from "react";
 
-const NotFound: react.FC = () => {
+const CNotFound: FC = () => {
     return (
         <main>
             <h1>404</h1>
@@ -9,4 +9,4 @@ const NotFound: react.FC = () => {
     );
 };
 
-export default NotFound;
+export default CNotFound;

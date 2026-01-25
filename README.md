@@ -1,7 +1,7 @@
 # SharpNote
 
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-blue?logo=github&style=flat-square)](https://github.com/Coder-Lucas/sharp-note.git)
-[![Netlify Website](https://img.shields.io/badge/Netlify-Website-blue?logo=netlify&style=flat-square)](https://shnt.netlify.app/)
+[![Netlify Website](https://img.shields.io/badge/Netlify-Website-blue?logo=netlify&style=flat-square)](https://shnt.netlify.app)
 
 ## 中文
 
@@ -38,7 +38,8 @@
 ### 立即开始
 
 **无需下载**，**无需注册**。
-[访问官网](https://shnt.netlify.app/)，立即开始使用SharpNote！
+[访问官网](https://shnt.netlify.app)
+，立即开始使用SharpNote！
 
 ### 本地部署
 
@@ -46,9 +47,10 @@
 
 ```bash
 # 推荐使用nvm管理Node.js版本
-nvm i
-nvm use newest
+nvm i 22.15.1
+nvm use 22.15.1
 npm i -g pnpm@8.15.9
+
 # 推荐使用AI编程工具：OpenCode
 npm i -g opencode-ai
 ```
@@ -59,6 +61,7 @@ npm i -g opencode-ai
 git clone https://github.com/Coder-Lucas/sharp-note.git
 cd sharp-note
 pnpm i
+
 # 启动开发服务器
 pnpm run dev
 ```
@@ -70,7 +73,7 @@ pnpm run dev
 
 ### 联系我们
 
-> [发送邮件](mailto://&#x73;&#x68;&#x61;&#x72;&#x70;&#x6e;&#x6f;&#x74;&#x65;&#x2e;&#x79;&#x65;&#x6e;&#x38;&#x30;&#x32;&#x40;&#x61;&#x6c;&#x65;&#x65;&#x61;&#x73;&#x2e;&#x63;&#x6f;&#x6d;)
+> [发送邮件](mailto://sharpnote.yen802@aleeas.com)
 > 以联系我们
 
 ## English
@@ -100,7 +103,7 @@ pnpm run dev
 ### Project Description
 
 **SharpNote**: your dedicated Markdown writing workspace.
-Minimalist design, intuitive operation, **keep your focus solely on writing itself**.
+Minimal design, intuitive operation, **keep your focus solely on writing itself**.
 Blazing-fast response, instant accessibility, **never miss a spark of inspiration**.
 Private & safe, local-first storage, **all data stored locally in your browser**.
 100% open-source, permanently free, **start your writing journey now**.
@@ -108,7 +111,8 @@ Private & safe, local-first storage, **all data stored locally in your browser**
 ### Get Started
 
 **NO DOWNLOAD**, **NO SIGN-UP**.
-**Visit the official website** and start using SharpNote now!
+[Visit the official website](https://shnt.netlify.app)
+, and start using SharpNote now!
 
 ### Local Deploy
 
@@ -116,9 +120,10 @@ Private & safe, local-first storage, **all data stored locally in your browser**
 
 ```bash
 # We recommend using nvm to manage Node.js versions
-nvm i
-nvm use newest
+nvm i 22.15.1
+nvm use 22.15.1
 npm i -g pnpm@8.15.9
+
 # We recommend the AI programming tool: OpenCode
 npm i -g opencode-ai
 ```
@@ -140,5 +145,5 @@ pnpm run dev
 
 ### Contact Us
 
-> [Send an email](mailto://&#x73;&#x68;&#x61;&#x72;&#x70;&#x6e;&#x6f;&#x74;&#x65;&#x2e;&#x79;&#x65;&#x6e;&#x38;&#x30;&#x32;&#x40;&#x61;&#x6c;&#x65;&#x65;&#x61;&#x73;&#x2e;&#x63;&#x6f;&#x6d;)
+> [Send an email](mailto://sharpnote.yen802@aleeas.com)
 > to contact us

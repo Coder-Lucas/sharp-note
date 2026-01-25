@@ -1,6 +1,6 @@
-import ESLintConfigNext from "eslint-config-next";
-import * as eslintConfig from "eslint/config";
+import Config from "eslint-config-next";
+import { defineConfig } from "eslint/config";
 
-const config = eslintConfig.defineConfig([...ESLintConfigNext]);
+const config = defineConfig([...Config]);
 
 export default config;

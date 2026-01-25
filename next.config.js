@@ -1,5 +1,3 @@
-const config = {
-    reactCompiler: false
-};
+const config = {};
 
 export default config;

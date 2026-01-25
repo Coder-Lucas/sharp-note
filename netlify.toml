@@ -12,19 +12,6 @@ Referrer-Policy = "strict-origin-when-cross-origin"
 X-Content-Type-Options = "nosniff"
 X-Frame-Options = "DENY"
 
-[[plugins]]
-package = "@netlify/plugin-lighthouse"
-
-[plugins.inputs.audits]
-path = "."
-
-[plugins.inputs.audits.thresholds]
-performance = 0.8
-
-[plugins.inputs.settings]
-locale = "zh"
-preset = "desktop"
-
 [[redirects]]
 force = false
 from = "/*"

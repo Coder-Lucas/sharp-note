@@ -1,168 +1,195 @@
 # AGENTS.md
 
-This guide is for agentic coding assistants working in the SharpNote repository.
+This document provides guidelines for agentic coding agents working in this repository.
 
-## Commands
+## Project Overview
 
-### Development
+SharpNote is a Next.js 16 PWA application for Markdown note-taking with local-first storage (IndexedDB via Dexie). The project uses TypeScript, React 19, Tailwind CSS v4, and follows a component-based architecture.
 
-- `pnpm run dev` - Start development server (default port 3000)
-- `pnpm run build` - Production build
-- `pnpm run start` - Start production server
+## Build Commands
 
-### Code Quality
+```bash
+# Install dependencies (requires pnpm 8.15.9)
+pnpm install
 
-- `npx eslint .` - Run ESLint on all files
-- `npx tsc --noEmit` - TypeScript type checking (no output)
-- `npx prettier --check .` - Check code formatting
+# Start development server
+pnpm run dev
 
-### Important Notes
+# Build for production
+pnpm run build
 
-- No test framework is currently configured
-- When adding tests, check README.md for preferred testing approach
-- Always run lint and typecheck after making changes
+# Start production server
+pnpm run start
+
+# Type checking
+pnpm run type
+
+# Linting
+pnpm run lint
+
+# Prettier check (format validation)
+pnpm run check
+
+# Formatting (write changes)
+pnpm run format
+```
+
+## Testing
+
+This project does not currently have a test framework configured. To add tests:
+
+1. Install a test framework: `pnpm add -D vitest @testing-library/react @testing-library/jest-dom`
+2. Create `vitest.config.ts` with Next.js compatibility
+3. Place tests in `__tests__` directories adjacent to source files
+4. Name test files as `*.test.ts` or `*.test.tsx`
+5. Run tests: `pnpm exec vitest` or `pnpm exec vitest run <filename>`
 
 ## Code Style Guidelines
 
 ### Imports
 
-- Use namespace imports for libraries: `import * as react from "react";`
-- Use default imports for components: `import Header from "#/header.tsx";`
-- Use named imports for utilities when needed
-- Always use path aliases:
-    - `@/*` → `app/*` (Next.js app directory)
-    - `#/*` → `components/*` (reusable components)
-    - `~/*` → `lib/*` (utilities and database)
+```typescript
+// Use named imports for React and Next.js
+import { FC, ReactNode } from "react";
+import NextImage from "next/image";
+import NextLink from "next/link";
 
-### Types
+// Use path aliases for internal modules
+import Header from "#/header.tsx";
+import { createNote } from "@lib/db.ts";
+import "@styles/main.css";
+```
 
-- Prefix type definitions with `T`: `type TProps`, `type TNote`
-- Use `Readonly<>` for component props: `type TProps = Readonly<{ children: react.ReactNode; }>`
-- Use explicit `react.FC` typing: `const Component: react.FC = () => {}`
-- Use React.ReactNode for children props
-- Export types when used in multiple files
+### Path Aliases
 
-### Components
+Configure imports using these aliases defined in `tsconfig.json`:
 
-- Use PascalCase for component names
-- Use `export default` for components
-- Add `"use client";` directive at top for client components
-- Define type props above component when used only there
-- Keep components pure and side-effect free (use hooks for state/effects)
-
-### Formatting
-
-- Indentation: 4 spaces
-- Line width: 1024 characters
-- Quotes: Double quotes for strings/imports
-- Semicolons: Required
-- Trailing commas: Disabled
-- Arrow function parentheses: Always required: `(x) => x`
-- Single quotes: Disabled (use double quotes)
-
-### Naming Conventions
-
-- Components: PascalCase (Header, Button, Index)
-- Functions/Variables: camelCase (createNote, db, metadata)
-- Types/Interfaces: PascalCase with T-prefix (TProps, TLayoutProps, TNote)
-- Constants: UPPER_SNAKE_CASE for global constants
-- File names: kebab-case for pages, PascalCase for components
-
-### Error Handling
-
-- Use try-catch for async operations with database/API calls
-- Log errors to console with template literals: `console.error(\`ERROR: \${e}\`);`
-- Log info with descriptive messages: `console.info("INFO: Note添加成功");`
-- Return `undefined` for void functions when needed
-- Avoid throwing errors in async DB operations, log and handle gracefully
+- `#/*` → `src/components/*`
+- `@/*` → `src/app/*`
+- `@hooks/*` → `src/hooks/*`
+- `@lib/*` → `src/lib/*`
+- `@styles/*` → `src/styles/*`
+- `~/*` → `./*`
 
 ### TypeScript
 
-- Strict mode is enabled
-- Path aliases are configured (see tsconfig.json)
-- Use ESNext modules
-- Type all function parameters and return types
-- Prefer explicit types over inference for public APIs
+- Use strict TypeScript with all strict flags enabled
+- Prefix all type definitions with `T`:
+    ```typescript
+    type TNote = { name: string; text: string };
+    type TLayoutProps = Readonly<{ children: ReactNode }>;
+    ```
+- Use `Readonly<{}>` for component props:
+    ```typescript
+    type TItemProps = Readonly<{
+        children?: ReactNode;
+        href: string;
+    }>;
+    ```
+- Use `FC<T>` for component types:
+    ```typescript
+    const Header: FC = () => { ... };
+    const Item: FC<TItemProps> = ({ children, href }) => { ... };
+    ```
 
-### React Best Practices
+### Naming Conventions
 
-- Use `"use client";` directive for interactive components
-- Keep components small and focused
-- Use functional components with hooks
-- Prefer client components for interactivity, server components for static content
-- Use fragment `<>...</>` for multiple root elements
+- **Components**: PascalCase (e.g., `Header`, `Footer`, `CTA`)
+- **Files**: Match component name (e.g., `header.tsx`, `footer.tsx`)
+- **Variables/functions**: camelCase (e.g., `createNote`, `retrieveNote`)
+- **Constants**: camelCase or UPPER_SNAKE_CASE for config constants
+- **Types**: Prefix with `T` (e.g., `TNote`, `TLayoutProps`)
 
-## Project Structure
+### Formatting (Prettier)
 
-```
-├── app/              # Next.js App Router (pages and routes)
-│   ├── layout.tsx    # Root layout
-│   ├── globals.css   # Global styles (Tailwind)
-│   └── ...pages/     # Route-specific pages
-├── components/       # Reusable UI components
-├── lib/             # Utilities, database (Dexie/IndexedDB)
-├── hooks/           # Custom React hooks
-└── public/          # Static assets
-```
+Prettier configuration (`prettier.config.js`):
 
-## Database (Dexie)
+- `tabWidth: 4` - Use 4 spaces for indentation
+- `singleQuote: false` - Use double quotes
+- `semi: true` - Always use semicolons
+- `trailingComma: "none"` - No trailing commas
+- `printWidth: Infinity` - No line width limit
+- `bracketSpacing: true` - Spaces inside object literals
 
-- Database name: "notes"
-- Notes table with `name` and `text` fields
-- All DB operations are async and return Promise
-- Error handling: log errors, don't throw
-- Pattern: define operation functions, export them, use in components
+Run `pnpm run format` before committing to auto-format code.
 
-## Testing
+### Components
 
-- Currently no test framework configured
-- When adding tests, choose appropriate framework (Jest/Vitest)
-- Follow project's testing patterns once established
-- Test critical paths: database operations, component rendering
+- Use `"use client"` directive for client-side components
+- Use default exports for components:
+    ```typescript
+    export default Header;
+    ```
+- Use named exports for utilities and types:
+    ```typescript
+    export { createNote };
+    export { metadata, viewport };
+    ```
 
-## Specific Patterns
+### Error Handling
 
-### Type Definition
-
-```typescript
-type TProps = Readonly<{
-    children?: react.ReactNode;
-    href: string;
-}>;
-```
-
-### Client Component
-
-```typescript
-"use client";
-
-import * as react from "react";
-
-const Component: react.FC = () => {
-    return <div>...</div>;
-};
-
-export default Component;
-```
-
-### Async Function with Error Handling
+Use try-catch blocks with proper logging:
 
 ```typescript
-const createNote: ({ name, text }: TNote) => Promise<undefined> = async ({ name, text }) => {
-    try {
-        await db.notes.add({ name, text });
-        console.info("INFO: Note添加成功");
-    } catch (e) {
-        console.error(`ERROR: ${e}`);
-    }
-    return undefined;
-};
+try {
+    await db.notes.add({ name, text });
+    console.info("INFO: Note添加成功");
+} catch (e) {
+    console.error(`ERROR: ${e}`);
+    throw e;
+}
 ```
 
-## Additional Notes
+### React Patterns
 
-- Uses Tailwind CSS 4.x with PostCSS
-- Local-first: all data stored in browser (IndexedDB via Dexie)
-- PWA-ready with manifest and service worker support
-- Dark mode support via Tailwind dark: prefix
-- Chinese language primary (zh-cmn-Hans-CN)
+- Use `FC<T>` for functional component typing
+- Destructure props with default values when appropriate:
+    ```typescript
+    const Item: FC<TItemProps> = ({ children = null, href }) => { ... };
+    ```
+- Use `ReactNode` for children that accept any valid React content
+
+### Tailwind CSS
+
+- Use Tailwind v4 with `@import "tailwindcss";` in CSS files
+- Use `@tailwindcss/postcss` in PostCSS configuration
+- Use dark mode classes: `dark:bg-zinc-950`, `dark:text-zinc-50`
+- Use `scheme-light-dark` for color scheme support
+- Use `font-serif` for body text (project requirement)
+
+### PWA Configuration
+
+- Configure manifest in `src/app/manifest.ts`
+- Set viewport and theme color in layout metadata
+- Use proper PWA metadata for app installation
+- Ensure proper color scheme support with `scheme-light-dark`
+
+### File Organization
+
+```
+src/
+├── app/           # Next.js App Router pages and layouts
+│   ├── manifest.ts    # PWA manifest configuration
+│   ├── robots.ts      # Search engine crawling rules
+│   └── sitemap.ts     # Site structure for search engines
+├── components/    # Reusable UI components
+├── lib/           # Utilities and database logic
+├── styles/        # Global styles and Tailwind imports
+└── hooks/         # Custom React hooks (when added)
+```
+
+### Client / Server Components
+
+- Add `"use client"` at the top of files containing:
+    - `useState`, `useEffect`, or other hooks
+    - Event handlers (onClick, onChange, etc.)
+    - Browser-only APIs
+- Keep server components as default (no directive needed)
+
+### Console Logging
+
+Follow this pattern for console output:
+
+- `console.info("INFO: ...")` for successful operations
+- `console.error(`ERROR: ${e}`)` for errors
+- Place initialization messages in global scope

@@ -1,13 +1,14 @@
-import * as next from "next";
-import * as react from "react";
+import Footer from "#/footer.tsx";
 import Header from "#/header.tsx";
-import "@/globals.css";
+import { Metadata, Viewport } from "next";
+import { ReactNode, FC } from "react";
+import "@styles/main.css";
 
-type TLayoutProps = Readonly<{
-    children: react.ReactNode;
+type TRootLayoutProps = Readonly<{
+    children: ReactNode;
 }>;
 
-const metadata: next.Metadata = {
+const metadata: Metadata = {
     authors: {
         name: "Lucas",
         url: "https://github.com/Coder-Lucas"
@@ -29,30 +30,29 @@ const metadata: next.Metadata = {
     },
     generator: "Next.js",
     icons: "/logo.svg",
-    keywords: ["Markdown", "笔记", "写作", "极简", "免费", "开源", "在线", "PWA"],
+    keywords: ["Markdown", "PWA", "免费", "写作", "在线", "开源", "极简", "笔记"],
     manifest: "/manifest.webmanifest",
     referrer: "origin",
     robots: "follow, index",
     title: "SharpNote"
 };
 
-const viewport: next.Viewport = {
+const viewport: Viewport = {
     colorScheme: "light dark",
     themeColor: "#000000"
 };
 
-const Layout: react.FC<TLayoutProps> = ({ children }) => {
+const RootLayout: FC<TRootLayoutProps> = ({ children }) => {
     return (
-        <html className="bg-zinc-50 scheme-light-dark dark:bg-zinc-950" dir="ltr" lang="zh-cmn-Hans-CN">
-            <body className="mt-16 flow-root font-mono text-zinc-950 dark:text-zinc-50">
-                <Header></Header>
-                <main className="m-4">{children}</main>
-                <footer></footer>
+        <html className="bg-zinc-50 text-base scheme-light-dark dark:bg-zinc-950" dir="ltr" lang="zh-cmn-Hans-CN">
+            <body className="mt-16 flow-root font-serif text-zinc-950 dark:text-zinc-50">
+                <Header />
+                {children}
+                <Footer />
             </body>
         </html>
     );
 };
 
-export { metadata };
-export { viewport };
-export default Layout;
+export { metadata, viewport };
+export default RootLayout;

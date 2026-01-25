@@ -1,15 +1,15 @@
 "use client";
 
-import * as react from "react";
+import { FC } from "react";
 
-type TErrorProps = Readonly<{
+type TCErrorProps = Readonly<{
     error: Error & {
         digest?: string;
     };
     reset: () => unknown;
 }>;
 
-const CError: react.FC<TErrorProps> = ({ error, reset }) => {
+const CError: FC<TCErrorProps> = ({ error, reset }) => {
     return (
         <>
             <h1>出现了未知错误</h1>
