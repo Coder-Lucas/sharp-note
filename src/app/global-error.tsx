@@ -1,15 +1,15 @@
 "use client";
 
-import * as react from "react";
+import { FC } from "react";
 
-type TGlobalErrorProps = Readonly<{
+type TCGlobalErrorProps = Readonly<{
     error: Error & {
         digest?: string;
     };
     reset: () => unknown;
 }>;
 
-const GlobalError: react.FC<TGlobalErrorProps> = ({ error, reset }) => {
+const CGlobalError: FC<TCGlobalErrorProps> = ({ error, reset }) => {
     return (
         <html>
             <body>
@@ -23,4 +23,4 @@ const GlobalError: react.FC<TGlobalErrorProps> = ({ error, reset }) => {
     );
 };
 
-export default GlobalError;
+export default CGlobalError;

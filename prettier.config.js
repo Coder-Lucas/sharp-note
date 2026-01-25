@@ -7,7 +7,7 @@ const config = {
     jsxSingleQuote: false,
     objectWrap: "preserve",
     plugins: ["prettier-plugin-tailwindcss"],
-    printWidth: 1024,
+    printWidth: Infinity,
     semi: true,
     singleAttributePerLine: false,
     singleQuote: false,

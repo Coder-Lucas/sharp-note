@@ -1,16 +1,16 @@
-import * as next from "next";
+import { MetadataRoute } from "next";
 
-type TSitemap = () => next.MetadataRoute.Sitemap;
+type TSitemap = () => MetadataRoute.Sitemap;
 
 const Sitemap: TSitemap = () => {
     return [
         {
             lastModified: new Date(),
-            url: "https://shnt.netlify.app/"
+            url: "https://shnt.netlify.app"
         },
         {
             lastModified: new Date(),
-            url: "https://shnt.netlify.app/func"
+            url: "https://shnt.netlify.app/fn"
         },
         {
             lastModified: new Date(),

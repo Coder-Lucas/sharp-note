@@ -3,27 +3,27 @@
     "dependencies": {
         "dexie": "4.2.1",
         "dexie-react-hooks": "4.2.0",
-        "next": "16.1.1",
+        "next": "16.1.4",
         "react": "19.2.3",
-        "react-dom": "19.2.3"
+        "react-dom": "19.2.3",
+        "react-icons": "5.5.0"
     },
     "devDependencies": {
         "@tailwindcss/postcss": "4.1.18",
         "@types/node": "22.15.35",
-        "@types/react": "19.2.8",
+        "@types/react": "19.2.9",
         "@types/react-dom": "19.2.3",
         "eslint": "9.39.2",
-        "eslint-config-next": "16.1.1",
+        "eslint-config-next": "16.1.4",
         "postcss": "8.5.6",
-        "prettier": "3.7.4",
+        "prettier": "3.8.1",
         "prettier-plugin-tailwindcss": "0.7.2",
         "tailwindcss": "4.1.18",
         "typescript": "5.9.3",
-        "typescript-eslint": "8.52.0"
+        "typescript-eslint": "8.53.1"
     },
     "engines": {
         "node": "22.15.1",
-        "npm": "10.9.2",
         "pnpm": "8.15.9"
     },
     "name": "sharp-note",
@@ -31,8 +31,12 @@
     "private": true,
     "scripts": {
         "build": "next build",
-        "dev": "next dev",
-        "start": "next start"
+        "check": "prettier . -c --config prettier.config.js --ignore-path .gitignore",
+        "dev": "next",
+        "lint": "eslint",
+        "format": "prettier . --config prettier.config.js --ignore-path .gitignore -w",
+        "start": "next start",
+        "type": "tsc"
     },
     "type": "module",
     "version": "0.0.0-config"

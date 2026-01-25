@@ -1,10 +1,10 @@
-import * as next from "next";
+import { MetadataRoute } from "next";
 
-type TRobots = () => next.MetadataRoute.Robots;
+type TRobots = () => MetadataRoute.Robots;
 
 const Robots: TRobots = () => {
     return {
-        host: "https://shnt.netlify.app/",
+        host: "https://shnt.netlify.app",
         rules: {
             allow: "/",
             disallow: ["*#*", "*?*"],

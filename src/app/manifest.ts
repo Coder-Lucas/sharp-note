@@ -1,6 +1,6 @@
-import * as next from "next";
+import { MetadataRoute } from "next";
 
-type TManifest = () => next.MetadataRoute.Manifest;
+type TManifest = () => MetadataRoute.Manifest;
 
 const Manifest: TManifest = () => {
     return {
@@ -15,7 +15,7 @@ const Manifest: TManifest = () => {
                 type: "image/svg"
             }
         ],
-        id: "/U2hhcnBOb3Rl",
+        id: "/",
         lang: "zh-cmn-Hans-CN",
         name: "SharpNote",
         orientation: "any",
