@@ -29,7 +29,46 @@ const metadata: Metadata = {
         url: false
     },
     generator: "Next.js",
-    icons: "/logo.svg",
+    icons: [
+        {
+            url: "/favicon.svg",
+            type: "image/svg"
+        },
+        {
+            url: "/favicon-srgb.svg",
+            type: "image/svg"
+        },
+        {
+            url: "/favicon-16.png",
+            sizes: "16x16",
+            type: "image/png"
+        },
+        {
+            url: "/favicon-32.png",
+            sizes: "32x32",
+            type: "image/png"
+        },
+        {
+            url: "/favicon-64.png",
+            sizes: "64x64",
+            type: "image/png"
+        },
+        {
+            url: "/favicon-128.png",
+            sizes: "128x128",
+            type: "image/png"
+        },
+        {
+            url: "/favicon-256.png",
+            sizes: "256x256",
+            type: "image/png"
+        },
+        {
+            url: "/favicon-512.png",
+            sizes: "512x512",
+            type: "image/png"
+        }
+    ],
     keywords: ["Markdown", "PWA", "免费", "写作", "在线", "开源", "极简", "笔记"],
     manifest: "/manifest.webmanifest",
     referrer: "origin",
@@ -39,7 +78,7 @@ const metadata: Metadata = {
 
 const viewport: Viewport = {
     colorScheme: "light dark",
-    themeColor: "#000000"
+    themeColor: "oklch(98.5% 0 0)"
 };
 
 const RootLayout: FC<TRootLayoutProps> = ({ children }) => {
