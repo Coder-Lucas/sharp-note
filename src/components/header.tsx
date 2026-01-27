@@ -24,7 +24,7 @@ const Header: FC = () => {
         <header className="fixed top-0 right-0 bottom-auto left-0 z-10 h-16 w-full bg-zinc-50/50 backdrop-blur-xs backdrop-saturate-150 dark:bg-zinc-950/50">
             <ul className="flex h-16 w-full items-center justify-around">
                 <Item href="/">
-                    <Image alt="logo" height={48} preload={true} src="/logo.svg" width={48} />
+                    <Image alt="favicon" height={48} preload={true} src="/favicon.svg" width={48} />
                 </Item>
                 <Item href="/fn">功能</Item>
                 <Item href="/settings">设置</Item>

@@ -14,16 +14,16 @@ const Index: FC = () => {
                 <CTA />
             </section>
             <section className="mt-32 grid grid-cols-2 grid-rows-2 gap-4 pr-4 pl-4">
-                <Card icon={<HiOutlineCube size="48" />} title="极简设计，操作直观">
+                <Card icon={<HiOutlineCube className="text-indigo-700 dark:text-indigo-300" size="48" />} title="极简设计，操作直观">
                     专注于写作本身
                 </Card>
-                <Card icon={<HiOutlineLightningBolt size="48" />} title="响应迅速，即开即用">
+                <Card icon={<HiOutlineLightningBolt className="text-indigo-700 dark:text-indigo-300" size="48" />} title="响应迅速，即开即用">
                     捕捉每一个灵感瞬间
                 </Card>
-                <Card icon={<HiOutlineCheckCircle size="48" />} title="隐私安全，本地存储">
+                <Card icon={<HiOutlineCheckCircle className="text-indigo-700 dark:text-indigo-300" size="48" />} title="隐私安全，本地存储">
                     所有数据全部存储于浏览器
                 </Card>
-                <Card icon={<HiOutlineCode size="48" />} title="完全开源，永久免费">
+                <Card icon={<HiOutlineCode className="text-indigo-700 dark:text-indigo-300" size="48" />} title="完全开源，永久免费">
                     开启你的写作之旅
                 </Card>
             </section>

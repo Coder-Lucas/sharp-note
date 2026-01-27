@@ -34,27 +34,24 @@ pnpm run check
 pnpm run format
 ```
 
-## Testing
-
-This project does not currently have a test framework configured. To add tests:
-
-1. Install a test framework: `pnpm add -D vitest @testing-library/react @testing-library/jest-dom`
-2. Create `vitest.config.ts` with Next.js compatibility
-3. Place tests in `__tests__` directories adjacent to source files
-4. Name test files as `*.test.ts` or `*.test.tsx`
-5. Run tests: `pnpm exec vitest` or `pnpm exec vitest run <filename>`
-
 ## Code Style Guidelines
 
 ### Imports
 
 ```typescript
-// Use named imports for React and Next.js
+// React imports (named)
 import { FC, ReactNode } from "react";
-import NextImage from "next/image";
-import NextLink from "next/link";
 
-// Use path aliases for internal modules
+// Next.js imports (mixed)
+import { Metadata, Viewport } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+// Third-party libraries (default + named)
+import Dexie, { Table } from "dexie";
+import { HiOutlineCheckCircle } from "react-icons/hi";
+
+// Path aliases for internal modules
 import Header from "#/header.tsx";
 import { createNote } from "@lib/db.ts";
 import "@styles/main.css";
@@ -100,22 +97,29 @@ Configure imports using these aliases defined in `tsconfig.json`:
 - **Constants**: camelCase or UPPER_SNAKE_CASE for config constants
 - **Types**: Prefix with `T` (e.g., `TNote`, `TLayoutProps`)
 
-### Formatting (Prettier)
+### ESLint & Formatting
 
-Prettier configuration (`prettier.config.js`):
+**ESLint Configuration** (`eslint.config.js`):
 
-- `tabWidth: 4` - Use 4 spaces for indentation
-- `singleQuote: false` - Use double quotes
-- `semi: true` - Always use semicolons
-- `trailingComma: "none"` - No trailing commas
-- `printWidth: Infinity` - No line width limit
-- `bracketSpacing: true` - Spaces inside object literals
+- Extends `eslint-config-next` with default Next.js rules
+- Run `pnpm run lint` to check code quality
 
-Run `pnpm run format` before committing to auto-format code.
+**Prettier Configuration** (`prettier.config.js`):
 
-### Components
+- `tabWidth: 4`, `singleQuote: false`, `semi: true`, `trailingComma: "none"`
+- `printWidth: Infinity`, `bracketSpacing: true`
+- Run `pnpm run format` before committing to auto-format code
+- Run `pnpm run check` to validate formatting
+
+### Components & React Patterns
 
 - Use `"use client"` directive for client-side components
+- Use `FC<T>` for functional component typing
+- Destructure props with default values when appropriate:
+    ```typescript
+    const Item: FC<TItemProps> = ({ children = null, href }) => { ... };
+    ```
+- Use `ReactNode` for children that accept any valid React content
 - Use default exports for components:
     ```typescript
     export default Header;
@@ -124,6 +128,15 @@ Run `pnpm run format` before committing to auto-format code.
     ```typescript
     export { createNote };
     export { metadata, viewport };
+    ```
+- Special components use prefixes: `CError`, `CLoading`
+- Empty page components follow 8-line template pattern
+- Database functions use explicit return types:
+    ```typescript
+    const createNote: ({ name, text }: TNote) => Promise<undefined> = async ({ name, text }) => {
+        // implementation
+        return undefined;
+    };
     ```
 
 ### Error Handling
@@ -140,22 +153,24 @@ try {
 }
 ```
 
-### React Patterns
+Database initialization with error handling:
 
-- Use `FC<T>` for functional component typing
-- Destructure props with default values when appropriate:
-    ```typescript
-    const Item: FC<TItemProps> = ({ children = null, href }) => { ... };
-    ```
-- Use `ReactNode` for children that accept any valid React content
+```typescript
+this.open().catch((e) => {
+    console.error(`ERROR: ${e}`);
+    throw e;
+});
+```
 
 ### Tailwind CSS
 
 - Use Tailwind v4 with `@import "tailwindcss";` in CSS files
 - Use `@tailwindcss/postcss` in PostCSS configuration
 - Use dark mode classes: `dark:bg-zinc-950`, `dark:text-zinc-50`
-- Use `scheme-light-dark` for color scheme support
+- Use color scheme support with `scheme-light-dark`
 - Use `font-serif` for body text (project requirement)
+- Color palette: `indigo-700/300` for accent, `zinc-50/950` for backgrounds
+- Consistent spacing and layout patterns from existing components
 
 ### PWA Configuration
 
@@ -168,10 +183,7 @@ try {
 
 ```
 src/
-├── app/           # Next.js App Router pages and layouts
-│   ├── manifest.ts    # PWA manifest configuration
-│   ├── robots.ts      # Search engine crawling rules
-│   └── sitemap.ts     # Site structure for search engines
+├── app/           # Next.js App Router pages, layouts, manifest.ts, robots.ts, sitemap.ts
 ├── components/    # Reusable UI components
 ├── lib/           # Utilities and database logic
 ├── styles/        # Global styles and Tailwind imports
@@ -190,6 +202,14 @@ src/
 
 Follow this pattern for console output:
 
-- `console.info("INFO: ...")` for successful operations
+- `console.info("INFO: ...")` for successful operations (uses Chinese text in practice)
 - `console.error(`ERROR: ${e}`)` for errors
 - Place initialization messages in global scope
+
+Examples:
+
+```typescript
+console.info("INFO: Note添加成功");
+console.info("INFO: 数据库创建完成");
+console.error(`ERROR: ${e}`);
+```
