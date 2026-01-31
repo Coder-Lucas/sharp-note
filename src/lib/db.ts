@@ -1,50 +1,43 @@
-import Dexie, { Table } from "dexie";
-
-type TNote = {
-    name: string;
-    text: string;
-};
-
-class NoteDB extends Dexie {
-    notes: Table<TNote, string, TNote> = undefined!;
-
-    constructor() {
-        super("notes");
-        this.version(1).stores({
-            notes: "name, text"
-        });
-        this.open().catch((e) => {
-            console.error(`ERROR: ${e}`);
-            throw e;
-        });
-    }
-}
-
-const db: NoteDB = new NoteDB();
-console.info("INFO: 数据库创建完成");
-
-const createNote: ({ name, text }: TNote) => Promise<undefined> = async ({ name, text }) => {
-    try {
-        name = `${name.trim()}.md`;
-        await db.notes.add({ name, text });
-        console.info("INFO: Note添加成功");
-    } catch (e) {
-        console.error(`ERROR: ${e}`);
-        throw e;
-    }
-    return undefined;
-};
-
-const retrieveNote: () => Promise<undefined> = async () => {
-    return undefined;
-};
-
-const updateNote: () => Promise<undefined> = async () => {
-    return undefined;
-};
-
-const deleteNote: () => Promise<undefined> = async () => {
-    return undefined;
-};
-
-export { createNote, retrieveNote, updateNote, deleteNote };
+// "use client";
+//
+// import Dexie, { Table } from "dexie";
+//
+// type TNote = {
+//     id: string;
+//     name: string;
+//     text: string;
+// };
+//
+// class SharpNoteDB extends Dexie {
+//     notes: Table<TNote, string, TNote> = undefined!;
+//
+//     static uuid() {
+//         return crypto.randomUUID();
+//     }
+//
+//     constructor() {
+//         super("SharpNoteDB");
+//         return this;
+//     }
+//
+//     async init() {
+//         try {
+//             this.version(1).stores({
+//                 notes: "id, name, text"
+//             });
+//             await this.open();
+//         } catch (e) {
+//             console.error(`ERROR: ${e}`);
+//             throw e;
+//         }
+//         return undefined;
+//     }
+// }
+//
+// const db: SharpNoteDB = new SharpNoteDB();
+// db.init().catch((e) => {
+//     console.error(`ERROR: ${e}`);
+//     throw e;
+// });
+//
+// export default db;
