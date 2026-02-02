@@ -29,7 +29,7 @@
 
 ### 项目描述
 
-**SharpNote**：你的**Markdown**专属写作空间。
+**SharpNote**：你的 **Markdown** 专属写作空间。
 极简设计，操作直观，**专注于写作本身**。
 响应迅速，即开即用，**捕捉每一个灵感瞬间**。
 隐私安全，本地存储，**所有数据全部存储于浏览器**。
@@ -39,14 +39,14 @@
 
 **无需下载**，**无需注册**。
 [访问官网](https://shnt.netlify.app)
-，立即开始使用SharpNote！
+，立即开始使用 SharpNote！
 
 ### 本地部署
 
 #### 环境准备
 
 ```bash
-# 推荐使用nvm管理Node.js版本
+# 推荐使用 nvm 管理 Node.js 版本
 nvm i 22.15.1
 nvm use 22.15.1
 npm i -g pnpm@8.15.9
@@ -102,7 +102,7 @@ pnpm run dev
 
 ### Project Description
 
-**SharpNote**: your dedicated Markdown writing workspace.
+**SharpNote**: your dedicated **Markdown** writing workspace.
 Minimal design, intuitive operation, **keep your focus solely on writing itself**.
 Blazing-fast response, instant accessibility, **never miss a spark of inspiration**.
 Private & safe, local-first storage, **all data stored locally in your browser**.

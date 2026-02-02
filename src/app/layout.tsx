@@ -20,7 +20,7 @@ const metadata: Metadata = {
     applicationName: "SharpNote",
     category: "笔记应用",
     classification: "在线Markdown笔记应用",
-    description: "SharpNote：你的Markdown专属写作空间。极简设计，操作直观，专注于写作本身。响应迅速，即开即用，捕捉每一个灵感瞬间。隐私安全，本地存储，所有数据全部存储于浏览器。完全开源，永久免费，开启你的写作之旅。",
+    description: "SharpNote：你的 Markdown 专属写作空间。极简设计，操作直观，专注于写作本身。响应迅速，即开即用，捕捉每一个灵感瞬间。隐私安全，本地存储，所有数据全部存储于浏览器。完全开源，永久免费，开启你的写作之旅。",
     formatDetection: {
         address: false,
         email: false,

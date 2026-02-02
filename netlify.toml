@@ -1,19 +1,19 @@
 [build]
-base = "."
-command = "pnpm run build"
-publish = ".next"
+    base = "."
+    command = "pnpm run build"
+    publish = ".next"
 
 [[headers]]
-for = "/*"
+    for = "/*"
 
-[headers.values]
-Permissions-Policy = "camera=(), geolocation=(), microphone=(), payment=()"
-Referrer-Policy = "strict-origin-when-cross-origin"
-X-Content-Type-Options = "nosniff"
-X-Frame-Options = "DENY"
+    [headers.values]
+        Permissions-Policy = "camera=(), geolocation=(), microphone=(), payment=()"
+        Referrer-Policy = "strict-origin-when-cross-origin"
+        X-Content-Type-Options = "nosniff"
+        X-Frame-Options = "DENY"
 
 [[redirects]]
-force = false
-from = "/*"
-status = 200
-to = "/index.html"
+    force = false
+    from = "/*"
+    status = 200
+    to = "/index.html"

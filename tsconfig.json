@@ -2,16 +2,19 @@
     "$schema": "https://www.schemastore.org/tsconfig.json",
     "compilerOptions": {
         "allowImportingTsExtensions": true,
+        "allowJs": true,
         "alwaysStrict": true,
         "baseUrl": "src",
+        "checkJs": true,
         "esModuleInterop": true,
         "incremental": true,
         "isolatedModules": true,
         "jsx": "react-jsx",
-        "lib": ["DOM", "ES2023"],
+        "lib": ["DOM", "DOM.AsyncIterable", "DOM.Iterable", "ES2015"],
         "module": "ESNext",
         "moduleResolution": "bundler",
         "noEmit": true,
+        "outDir": "out",
         "paths": {
             "#/*": ["components/*"],
             "@/*": ["app/*"],
@@ -25,6 +28,7 @@
                 "name": "next"
             }
         ],
+        "resolveJsonModule": true,
         "rootDir": ".",
         "skipLibCheck": true,
         "strict": true,

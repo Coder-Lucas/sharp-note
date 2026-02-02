@@ -1,5 +1,46 @@
-# Created by https://www.toptal.com/developers/gitignore/api/emacs,git,jetbrains,linux,macos,nextjs,node,react,sublimetext,vim,visualstudiocode,windows
-# Edit at https://www.toptal.com/developers/gitignore?templates=emacs,git,jetbrains,linux,macos,nextjs,node,react,sublimetext,vim,visualstudiocode,windows
+# Created by https://www.toptal.com/developers/gitignore/api/git,vim,node,emacs,linux,macos,react,nextjs,vercel,android,windows,jetbrains,notepadpp,sublimetext,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=git,vim,node,emacs,linux,macos,react,nextjs,vercel,android,windows,jetbrains,notepadpp,sublimetext,visualstudiocode
+
+### Android ###
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log/OS Files
+*.log
+
+# Android Studio generated files and folders
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+output.json
+
+# IntelliJ
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Android Profiling
+*.hprof
+
+### Android Patch ###
+gen-external-apklibs
+
+# Replacement of .externalNativeBuild directories introduced
+# with Android Studio 3.5.
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
@@ -265,7 +306,6 @@ next-env.d.ts
 ### Node ###
 # Logs
 logs
-*.log
 lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
@@ -397,6 +437,10 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+### NotepadPP ###
+# Notepad++ backups #
+*.bak
+
 ### react ###
 .DS_*
 **/*.backup.*
@@ -442,6 +486,8 @@ bh_unicode_properties.cache
 # Sublime-github package stores a github token in this file
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
+
+### Vercel ###
 
 ### Vim ###
 # Swap
@@ -508,4 +554,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/emacs,git,jetbrains,linux,macos,nextjs,node,react,sublimetext,vim,visualstudiocode,windows
+# End of https://www.toptal.com/developers/gitignore/api/git,vim,node,emacs,linux,macos,react,nextjs,vercel,android,windows,jetbrains,notepadpp,sublimetext,visualstudiocode
