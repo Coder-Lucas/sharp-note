@@ -1,7 +1,7 @@
 import { FC } from "react";
 
-const CLoading: FC = () => {
+const NextLoading: FC = () => {
     return <main />;
 };
 
-export default CLoading;
+export default NextLoading;

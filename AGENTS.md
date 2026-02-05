@@ -6,33 +6,47 @@ This document provides guidelines for agentic coding agents working in this repo
 
 SharpNote is a Next.js 16 PWA application for Markdown note-taking with local-first storage (IndexedDB via Dexie). The project uses TypeScript, React 19, Tailwind CSS v4, and follows a component-based architecture.
 
+## Environment Requirements
+
+- **Node.js**: 22.15.1
+- **pnpm**: 8.15.9
+- **TypeScript**: 5.9.3
+- **ESLint**: 9.39.2
+- **Prettier**: 3.8.1
+
 ## Build Commands
 
 ```bash
 # Install dependencies (requires pnpm 8.15.9)
-pnpm install
+pnpm i
 
 # Start development server
-pnpm run dev
+pnpm dev
 
 # Build for production
-pnpm run build
+pnpm build
 
 # Start production server
-pnpm run start
+pnpm start
 
 # Type checking
-pnpm run type
+pnpm type
 
 # Linting
-pnpm run lint
+pnpm lint
 
 # Prettier check (format validation)
-pnpm run check
+pnpm check
 
 # Formatting (write changes)
-pnpm run format
+pnpm format
 ```
+
+## Editor Configuration
+
+The project uses `.editorconfig` for basic editor settings:
+
+- charset: UTF-8
 
 ## Code Style Guidelines
 
@@ -70,17 +84,17 @@ Configure imports using these aliases defined in `tsconfig.json`:
 
 ### TypeScript
 
-- Use strict TypeScript with all strict flags enabled
+- Use strict TypeScript with all strict flags enabled (`strict: true`, `alwaysStrict: true`)
 - Prefix all type definitions with `T`:
     ```typescript
-    type TNote = { name: string; text: string };
-    type TLayoutProps = Readonly<{ children: ReactNode }>;
+    type TNote = { id: string; name: string; text: string };
+    type TRootLayoutProps = Readonly<{ children: ReactNode }>;
     ```
 - Use `Readonly<{}>` for component props:
     ```typescript
     type TItemProps = Readonly<{
-        children?: ReactNode;
-        href: string;
+        readonly children?: ReactNode;
+        readonly href: string;
     }>;
     ```
 - Use `FC<T>` for component types:
@@ -88,28 +102,39 @@ Configure imports using these aliases defined in `tsconfig.json`:
     const Header: FC = () => { ... };
     const Item: FC<TItemProps> = ({ children, href }) => { ... };
     ```
+- Mark all props as `readonly`:
+    ```typescript
+    type TItemProps = {
+        readonly children?: ReactNode;
+        readonly href: string;
+    };
+    ```
 
 ### Naming Conventions
 
 - **Components**: PascalCase (e.g., `Header`, `Footer`, `CTA`)
 - **Files**: Match component name (e.g., `header.tsx`, `footer.tsx`)
-- **Variables/functions**: camelCase (e.g., `createNote`, `retrieveNote`)
+- **Variables/functions**: camelCase (e.g., `createNote`, `retrieveNote`, `init`)
 - **Constants**: camelCase or UPPER_SNAKE_CASE for config constants
-- **Types**: Prefix with `T` (e.g., `TNote`, `TLayoutProps`)
+- **Types**: Prefix with `T` (e.g., `TNote`, `TRootLayoutProps`, `TItemProps`)
+- **Classes**: PascalCase (e.g., `SharpNoteDB`)
 
 ### ESLint & Formatting
 
 **ESLint Configuration** (`eslint.config.js`):
 
 - Extends `eslint-config-next` with default Next.js rules
-- Run `pnpm run lint` to check code quality
+- Run `pnpm lint` to check code quality
 
 **Prettier Configuration** (`prettier.config.js`):
 
 - `tabWidth: 4`, `singleQuote: false`, `semi: true`, `trailingComma: "none"`
 - `printWidth: Infinity`, `bracketSpacing: true`
-- Run `pnpm run format` before committing to auto-format code
-- Run `pnpm run check` to validate formatting
+- `arrowParens: "always"`, `jsxSingleQuote: false`
+- `endOfLine: "lf"`, `htmlWhitespaceSensitivity: "ignore"`
+- `embeddedLanguageFormatting: "off"`, `objectWrap: "preserve"`
+- Run `pnpm format` before committing to auto-format code
+- Run `pnpm check` to validate formatting
 
 ### Components & React Patterns
 
@@ -124,12 +149,12 @@ Configure imports using these aliases defined in `tsconfig.json`:
     ```typescript
     export default Header;
     ```
-- Use named exports for utilities and types:
+- Use named exports for utilities, types, and metadata:
     ```typescript
     export { createNote };
     export { metadata, viewport };
     ```
-- Special components use prefixes: `CError`, `CLoading`
+- Special components use prefixes: `NextError`, `NextLoading`
 - Empty page components follow 8-line template pattern
 - Database functions use explicit return types:
     ```typescript
@@ -156,10 +181,18 @@ try {
 Database initialization with error handling:
 
 ```typescript
-this.open().catch((e) => {
-    console.error(`ERROR: ${e}`);
-    throw e;
-});
+async init() {
+    try {
+        this.version(1).stores({
+            notes: "id, name, text"
+        });
+        await this.open();
+    } catch (e) {
+        console.error(`ERROR: ${e}`);
+        throw e;
+    }
+    return undefined;
+}
 ```
 
 ### Tailwind CSS
@@ -171,6 +204,7 @@ this.open().catch((e) => {
 - Use `font-serif` for body text (project requirement)
 - Color palette: `indigo-700/300` for accent, `zinc-50/950` for backgrounds
 - Consistent spacing and layout patterns from existing components
+- Use utility classes for transitions: `transition-colors duration-200 ease-in-out`
 
 ### PWA Configuration
 
@@ -178,6 +212,7 @@ this.open().catch((e) => {
 - Set viewport and theme color in layout metadata
 - Use proper PWA metadata for app installation
 - Ensure proper color scheme support with `scheme-light-dark`
+- Theme color: `oklch(98.5% 0 0)`
 
 ### File Organization
 
@@ -212,4 +247,69 @@ Examples:
 console.info("INFO: Note添加成功");
 console.info("INFO: 数据库创建完成");
 console.error(`ERROR: ${e}`);
+```
+
+### Database Patterns (Dexie.js)
+
+- Extend `Dexie` class for database operations
+- Define tables using `Table<T, K, T>` generic types
+- Use `version().stores()` to define schema
+- Initialize with `async init()` method
+- Return `undefined` explicitly from init methods
+
+```typescript
+class SharpNoteDB extends Dexie {
+    notes: Table<TNote, string, TNote> = undefined!;
+
+    constructor() {
+        super("SharpNoteDB");
+        return this;
+    }
+
+    async init() {
+        try {
+            this.version(1).stores({
+                notes: "id, name, text"
+            });
+            await this.open();
+        } catch (e) {
+            console.error(`ERROR: ${e}`);
+            throw e;
+        }
+        return undefined;
+    }
+}
+```
+
+### Metadata Configuration
+
+- Use named exports for `metadata` and `viewport` objects
+- Configure viewport with `colorScheme: "light dark"` and theme color
+- Use proper Chinese locale settings: `lang="zh-Hans-CN"`
+
+```typescript
+const metadata: Metadata = {
+    authors: { name: "Lucas", url: "..." },
+    applicationName: "SharpNote",
+    description: "...",
+    icons: [...],
+    manifest: "/manifest.webmanifest",
+    title: "SharpNote"
+};
+
+const viewport: Viewport = {
+    colorScheme: "light dark",
+    themeColor: "oklch(98.5% 0 0)"
+};
+```
+
+### Image and Link Usage
+
+- Use `preload={true}` for critical images
+- Use `prefetch={true}` for navigation links
+- Specify `alt`, `height`, `width` for all images
+
+```typescript
+<Image alt="favicon" height={48} preload={true} src="/favicon.svg" width={48} />
+<Link href="/" prefetch={true}>...</Link>
 ```

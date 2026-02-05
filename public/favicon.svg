@@ -1,6 +1,7 @@
+<?xml version="1.0" ?>
 <svg height="100%" viewBox="0 0 48 48" width="100%" xmlns="http://www.w3.org/2000/svg">
     <title>SharpNote</title>
     <desc>The minimal round icon for SharpNote.</desc>
-    <path d="M0 0 H 48 V 48 H 0 Z" fill="oklch(14.1% 0.005 285.823)" />
+    <path d="M 0 0 H 48 V 48 H 0 Z" fill="oklch(14.1% 0.005 285.823)" />
     <path d="M 36 24 A 12 12 0 1 1 12 24 A 12 12 0 1 1 36 24 Z" fill="oklch(98.5% 0 0)" />
 </svg>

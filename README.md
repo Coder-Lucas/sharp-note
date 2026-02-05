@@ -5,6 +5,8 @@
 
 ## 中文
 
+**README** 文档中文篇。
+
 ### 项目目录
 
 1. [SharpNote](#sharpnote)
@@ -21,7 +23,7 @@
         1. [Table of Contents](#table-of-contents)
         2. [Project Description](#project-description)
         3. [Get Started](#get-started)
-        4. [Local Deploy](#local-deploy)
+        4. [Local Deployment](#local-deployment)
             1. [Env Setup](#env-setup)
             2. [Install Dependencies](#install-dependencies)
         5. [License](#license)
@@ -43,6 +45,8 @@
 
 ### 本地部署
 
+让我们教你一步步完成 **SharpNote** 的本地部署。
+
 #### 环境准备
 
 ```bash
@@ -50,9 +54,6 @@
 nvm i 22.15.1
 nvm use 22.15.1
 npm i -g pnpm@8.15.9
-
-# 推荐使用AI编程工具：OpenCode
-npm i -g opencode-ai
 ```
 
 #### 安装依赖
@@ -68,15 +69,17 @@ pnpm run dev
 
 ### 许可证
 
-> 本应用遵循
-> [The MIT License (MIT)](LICENSE.md)
+> 本应用遵循 The
+> [MIT License](https://opensource.org/license/mit)
 
 ### 联系我们
 
-> [发送邮件](mailto://sharpnote.yen802@aleeas.com)
+> [发送邮件](mailto:sharpnote.yen802@aleeas.com)
 > 以联系我们
 
 ## English
+
+English Version of the **README** Doc.
 
 ### Table of Contents
 
@@ -94,7 +97,7 @@ pnpm run dev
         1. [Table of Contents](#table-of-contents)
         2. [Project Description](#project-description)
         3. [Get Started](#get-started)
-        4. [Local Deploy](#local-deploy)
+        4. [Local Deployment](#local-deployment)
             1. [Env Setup](#env-setup)
             2. [Install Dependencies](#install-dependencies)
         5. [License](#license)
@@ -103,8 +106,8 @@ pnpm run dev
 ### Project Description
 
 **SharpNote**: your dedicated **Markdown** writing workspace.
-Minimal design, intuitive operation, **keep your focus solely on writing itself**.
-Blazing-fast response, instant accessibility, **never miss a spark of inspiration**.
+Minimalist design, intuitive operation, **keep your focus solely on writing itself**.
+Blazing-fast response, instant access, **never miss a spark of inspiration**.
 Private & safe, local-first storage, **all data stored locally in your browser**.
 100% open-source, permanently free, **start your writing journey now**.
 
@@ -114,7 +117,9 @@ Private & safe, local-first storage, **all data stored locally in your browser**
 [Visit the official website](https://shnt.netlify.app)
 , and start using SharpNote now!
 
-### Local Deploy
+### Local Deployment
+
+Let's walk you step-by-step through the local deployment of SharpNote.
 
 #### Env Setup
 
@@ -123,9 +128,6 @@ Private & safe, local-first storage, **all data stored locally in your browser**
 nvm i 22.15.1
 nvm use 22.15.1
 npm i -g pnpm@8.15.9
-
-# We recommend the AI programming tool: OpenCode
-npm i -g opencode-ai
 ```
 
 #### Install Dependencies
@@ -134,16 +136,17 @@ npm i -g opencode-ai
 git clone https://github.com/Coder-Lucas/sharp-note.git
 cd sharp-note
 pnpm i
+
 # Launch the dev server
-pnpm run dev
+pnpm dev
 ```
 
 ### License
 
-> This app is licensed under
-> [The MIT License (MIT)](LICENSE.md)
+> This app is licensed under the
+> [MIT License](https://opensource.org/license/mit)
 
 ### Contact Us
 
-> [Send an email](mailto://sharpnote.yen802@aleeas.com)
+> [Send an email](mailto:sharpnote.yen802@aleeas.com)
 > to contact us

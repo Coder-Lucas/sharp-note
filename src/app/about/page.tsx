@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 const About: FC = () => {
-    return null;
+    return <main />;
 };
 
 export default About;

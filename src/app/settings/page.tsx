@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 const Settings: FC = () => {
-    return null;
+    return <main />;
 };
 
 export default Settings;

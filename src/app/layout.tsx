@@ -4,9 +4,9 @@ import { Metadata, Viewport } from "next";
 import { ReactNode, FC } from "react";
 import "@styles/main.css";
 
-type TRootLayoutProps = Readonly<{
-    children: ReactNode;
-}>;
+type TRootLayoutProps = {
+    readonly children: ReactNode;
+};
 
 const metadata: Metadata = {
     authors: {
@@ -69,7 +69,7 @@ const metadata: Metadata = {
             type: "image/png"
         }
     ],
-    keywords: ["Markdown", "PWA", "免费", "写作", "在线", "开源", "极简", "笔记"],
+    keywords: ["css", "dexiejs", "eslint", "html", "indexeddb", "javascript", "markdown", "netlify", "nextjs", "nodejs", "nvm", "pnpm", "postcss", "prettier", "pwa", "react", "tailwindcss", "typescript", "vercel", "web"],
     manifest: "/manifest.webmanifest",
     referrer: "origin",
     robots: "follow, index",
@@ -83,7 +83,7 @@ const viewport: Viewport = {
 
 const RootLayout: FC<TRootLayoutProps> = ({ children }) => {
     return (
-        <html className="bg-zinc-50 text-base scheme-light-dark dark:bg-zinc-950" dir="ltr" lang="zh-cmn-Hans-CN">
+        <html className="bg-zinc-50 text-base scheme-light-dark dark:bg-zinc-950" dir="ltr" lang="zh-Hans-CN">
             <body className="mt-16 flow-root font-serif text-zinc-950 dark:text-zinc-50">
                 <Header />
                 {children}

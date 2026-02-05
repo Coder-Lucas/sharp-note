@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const CNotFound: FC = () => {
+const NextNotFound: FC = () => {
     return (
         <main>
             <h1>404</h1>
@@ -9,4 +9,4 @@ const CNotFound: FC = () => {
     );
 };
 
-export default CNotFound;
+export default NextNotFound;

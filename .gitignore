@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/git,vim,node,emacs,linux,macos,react,nextjs,vercel,android,windows,jetbrains,notepadpp,sublimetext,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=git,vim,node,emacs,linux,macos,react,nextjs,vercel,android,windows,jetbrains,notepadpp,sublimetext,visualstudiocode
+# Created by https://www.toptal.com/developers/gitignore/api/git,vim,node,emacs,linux,macos,react,nextjs,android,windows,jetbrains,notepadpp,sublimetext,jupyternotebooks,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=git,vim,node,emacs,linux,macos,react,nextjs,android,windows,jetbrains,notepadpp,sublimetext,jupyternotebooks,visualstudiocode
 
 ### Android ###
 # Gradle files
@@ -220,6 +220,20 @@ fabric.properties
 # Azure Toolkit for IntelliJ plugin
 # https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij
 .idea/**/azureSettings.xml
+
+### JupyterNotebooks ###
+# gitignore template for Jupyter Notebooks
+# website: http://jupyter.org/
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Remove previous ipynb_checkpoints
+#   git rm -r .ipynb_checkpoints/
 
 ### Linux ###
 
@@ -487,8 +501,6 @@ bh_unicode_properties.cache
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
 
-### Vercel ###
-
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
@@ -554,4 +566,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/git,vim,node,emacs,linux,macos,react,nextjs,vercel,android,windows,jetbrains,notepadpp,sublimetext,visualstudiocode
+# End of https://www.toptal.com/developers/gitignore/api/git,vim,node,emacs,linux,macos,react,nextjs,android,windows,jetbrains,notepadpp,sublimetext,jupyternotebooks,visualstudiocode

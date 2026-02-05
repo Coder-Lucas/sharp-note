@@ -2,17 +2,15 @@
 
 import { FC } from "react";
 
-type TCGlobalErrorProps = Readonly<{
-    error: Error & {
-        digest?: string;
-    };
-    reset: () => unknown;
-}>;
+type TNextGlobalErrorProps = {
+    readonly error: Error;
+    readonly reset: () => unknown;
+};
 
-const CGlobalError: FC<TCGlobalErrorProps> = ({ error, reset }) => {
+const NextGlobalError: FC<TNextGlobalErrorProps> = ({ error, reset }) => {
     return (
-        <html>
-            <body>
+        <html className="bg-zinc-50 text-base scheme-light-dark dark:bg-zinc-950" dir="ltr" lang="zh-Hans-CN">
+            <body className="mt-16 flow-root font-serif text-zinc-950 dark:text-zinc-50">
                 <main>
                     <h1>出现了未知错误</h1>
                     <p>{error.message}</p>
@@ -23,4 +21,4 @@ const CGlobalError: FC<TCGlobalErrorProps> = ({ error, reset }) => {
     );
 };
 
-export default CGlobalError;
+export default NextGlobalError;

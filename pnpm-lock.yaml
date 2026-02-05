@@ -10,7 +10,7 @@ dependencies:
         version: 4.2.1
     dexie-react-hooks:
         specifier: 4.2.0
-        version: 4.2.0(@types/react@19.2.10)(dexie@4.2.1)(react@19.2.4)
+        version: 4.2.0(@types/react@19.2.11)(dexie@4.2.1)(react@19.2.4)
     next:
         specifier: 16.1.6
         version: 16.1.6(@babel/core@7.28.6)(react-dom@19.2.4)(react@19.2.4)
@@ -35,11 +35,11 @@ devDependencies:
         specifier: 22.15.35
         version: 22.15.35
     "@types/react":
-        specifier: 19.2.10
-        version: 19.2.10
+        specifier: 19.2.11
+        version: 19.2.11
     "@types/react-dom":
         specifier: 19.2.3
-        version: 19.2.3(@types/react@19.2.10)
+        version: 19.2.3(@types/react@19.2.11)
     eslint:
         specifier: 9.39.2
         version: 9.39.2
@@ -895,16 +895,16 @@ packages:
             undici-types: 6.21.0
         dev: true
 
-    /@types/react-dom@19.2.3(@types/react@19.2.10):
+    /@types/react-dom@19.2.3(@types/react@19.2.11):
         resolution: { integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ== }
         peerDependencies:
             "@types/react": ^19.2.0
         dependencies:
-            "@types/react": 19.2.10
+            "@types/react": 19.2.11
         dev: true
 
-    /@types/react@19.2.10:
-        resolution: { integrity: sha512-WPigyYuGhgZ/cTPRXB2EwUw+XvsRA3GqHlsP4qteqrnnjDrApbS7MxcGr/hke5iUoeB7E/gQtrs9I37zAJ0Vjw== }
+    /@types/react@19.2.11:
+        resolution: { integrity: sha512-tORuanb01iEzWvMGVGv2ZDhYZVeRMrw453DCSAIn/5yvcSVnMoUMTyf33nQJLahYEnv9xqrTNbgz4qY5EfSh0g== }
         dependencies:
             csstype: 3.2.3
 
@@ -1552,14 +1552,14 @@ packages:
         resolution: { integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ== }
         engines: { node: ">=8" }
 
-    /dexie-react-hooks@4.2.0(@types/react@19.2.10)(dexie@4.2.1)(react@19.2.4):
+    /dexie-react-hooks@4.2.0(@types/react@19.2.11)(dexie@4.2.1)(react@19.2.4):
         resolution: { integrity: sha512-u7KqTX9JpBQK8+tEyA9X0yMGXlSCsbm5AU64N6gjvGk/IutYDpLBInMYEAEC83s3qhIvryFS+W+sqLZUBEvePQ== }
         peerDependencies:
             "@types/react": ">=16"
             dexie: ">=4.2.0-alpha.1 <5.0.0"
             react: ">=16"
         dependencies:
-            "@types/react": 19.2.10
+            "@types/react": 19.2.11
             dexie: 4.2.1
             react: 19.2.4
         dev: false

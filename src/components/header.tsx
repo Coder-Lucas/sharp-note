@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ReactNode, FC } from "react";
 
-type TItemProps = Readonly<{
-    children?: ReactNode;
-    href: string;
-}>;
+type TItemProps = {
+    readonly children?: ReactNode;
+    readonly href: string;
+};
 
 const Item: FC<TItemProps> = ({ children = null, href }) => {
     return (

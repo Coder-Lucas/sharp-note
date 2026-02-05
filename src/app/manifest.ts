@@ -60,7 +60,7 @@ const Manifest: TManifest = () => {
             }
         ],
         id: "/",
-        lang: "zh-cmn-Hans-CN",
+        lang: "zh-Hans-CN",
         launch_handler: {
             client_mode: "focus-existing"
         },
