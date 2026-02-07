@@ -14,6 +14,14 @@ const Sitemap: TSitemap = () => {
         },
         {
             lastModified: new Date(),
+            url: "https://shnt.netlify.app/fn/new"
+        },
+        {
+            lastModified: new Date(),
+            url: "https://shnt.netlify.app/fn/trash"
+        },
+        {
+            lastModified: new Date(),
             url: "https://shnt.netlify.app/settings"
         },
         {

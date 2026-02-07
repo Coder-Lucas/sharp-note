@@ -51,7 +51,7 @@
 
 ```bash
 # 推荐使用 nvm 管理 Node.js 版本
-nvm i 22.15.1
+nvm install 22.15.1
 nvm use 22.15.1
 npm i -g pnpm@8.15.9
 ```

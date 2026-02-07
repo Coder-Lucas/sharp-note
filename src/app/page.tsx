@@ -1,5 +1,3 @@
-"use client";
-
 import CTA from "#/cta.tsx";
 import Card from "#/card.tsx";
 import { FC } from "react";
